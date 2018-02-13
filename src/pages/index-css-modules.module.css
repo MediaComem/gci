@@ -1,0 +1,77 @@
+body{
+	margin: 0;
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+.mainNav{
+	position: absolute;
+	top: 0;
+	right: 0;
+	z-index:10;
+	height: 100px;
+	display: flex;
+	align-items: center;
+	text-transform: uppercase;
+}
+.mainNav ul{
+	margin: 0;
+	padding: 0;
+	list-style-type: none;
+	text-align: center;
+}
+.mainNav ul li { display: inline; }
+.mainNav ul li a { 
+	text-decoration: none;
+	color:#fff;
+	margin-right: 10px;
+	margin-left: 10px;
+}
+.heigLogo{
+	position:absolute;
+	top:0;
+	left:0;
+	z-index:11;
+	max-width:150px;
+	margin-top:20px;
+}
+.slidesFixedContent{
+	position:absolute;
+	top:0;
+	right:0;
+	height:100vh;
+	width:50%;
+	display:flex;
+	justify-content:center;
+	flex-direction:column;
+}
+.slidesFixedContent h2{
+	text-transform: uppercase;
+	margin-bottom: 0;
+	margin-top: 0;
+}
+.slidesFixedContent h2:nth-child(2),.slidesFixedContent p{
+	color:#fff;
+}
+.slidesImageContainer{
+	max-width:50%;
+	height:100vh;
+	display:flex;
+	align-items:center;
+	justify-content:center;
+}
+.slidesImageContainerImage{
+	max-width:500px;
+	max-height:500px;
+	height:auto;
+}
+.sliderDot{
+	background:#fff;
+	border:#fff 2px solid;
+	width:14px;
+	height:14px;
+	border-radius:100%; 
+	padding:0;
+	margin-right:8px;
+}
+.sliderDot:disabled {
+  background: transparent;
+}
