@@ -116,6 +116,7 @@ body{
 	justify-content: center;
 	padding: 15px;
 	max-width: 1100px;
+	width: 100%;
 }
 .gridCol4{
 	flex-basis: 40%;
@@ -240,4 +241,49 @@ body{
 	text-transform: uppercase;
 	align-self: flex-start;
 	font-weight: bold;
+}
+
+.newsLetterContainer{
+	color:#8a959e;
+	background: #212121;
+}
+.newsLetterContainer h1{
+	text-transform: uppercase;
+}
+.newsLetterContainer p{
+	margin-bottom: 50px;
+}
+.newsLetterForm{
+	display: flex;
+}
+.newsLetterForm input[type="text"]{
+	padding: 8px 15px;
+	margin-bottom: 20px;
+	width: 220px;
+}
+.newsLetterForm input[type="submit"]{
+	border:none;
+	background: #dce2e7;
+	padding: 10px 15px;
+	text-transform: uppercase;
+	align-self: flex-start;
+	font-weight: bold;
+	margin-left:25px; 
+}
+.newsLetterContainer .socialIcons{
+	display: flex;
+}
+.newsLetterContainer .socialIcons img{
+	height: 30px;
+	margin-right: 20px;
+}
+
+.footerContainer{
+	color:#fff;
+	background: #000;
+	font-size: 0.6em;
+}
+.footerContainer img{
+	float: right;
+	max-width: 100px;	
 }

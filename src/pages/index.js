@@ -3,7 +3,10 @@ import styles from "./index-css-modules.module.css";
 import { CarouselProvider, Slider, Slide, Dot, DotGroup, Image } from 'pure-react-carousel';
 import slide1 from "../images/slide-2.png";
 import logoHeig from "../images/heig-vd.png";
+import logoHesSo from "../images/hes-so.png";
 import logoHeigBlack from "../images/heig-vd-black.png";
+import facebookIcon from "../images/facebook.png";
+import youtubeIcon from "../images/youtube.png";
 import goDown from "../images/go-down.png";
 import skill1 from "../images/GCI-pictos-competences-01.png";
 import skill2 from "../images/GCI-pictos-competences-02.png";
@@ -17,8 +20,25 @@ import skill9 from "../images/GCI-pictos-competences-09.png";
 import skill10 from "../images/GCI-pictos-competences-10.png";
 import skill11 from "../images/GCI-pictos-competences-11.png";
 import 'pure-react-carousel/dist/react-carousel.es.css';
-import YouTube from 'react-youtube';
-console.log(styles)
+import GoogleMapReact from 'google-map-react';
+
+
+class SimpleMap extends React.Component {
+  static defaultProps = {
+    center: {lat: 46.7792276, lng: 6.6571928},
+    zoom: 15
+  };
+
+  render() {
+    return (
+      <GoogleMapReact
+        defaultCenter={this.props.center}
+        defaultZoom={this.props.zoom}
+      >
+      </GoogleMapReact>
+    );
+  }
+}
 
 export default class extends React.Component {
 
@@ -57,6 +77,11 @@ export default class extends React.Component {
       <PaletteSection anchor="section3"/>
       <InformationsSection anchor="section4"/>
       <ContactFormSection anchor="section5"/>
+      <div style={{height:'300px'}}>
+        <SimpleMap/>
+      </div>
+      <NewsLetterSection anchor='section6' />
+      <Footer/>
       </div>
     );
   }
@@ -72,6 +97,65 @@ const Nav = props => (
     </ul>
   </nav>
 );
+
+
+const Footer = props => (
+  <section className={[styles.gridContainer,styles.footerContainer].join(' ')} id={props.anchor}>
+    <section className={styles.gridRow}>
+      <article className={styles.gridCol6}>
+        <p>Filière Géomatique orientation Construction et Infrastructures (GCI) </p>
+        <p>Une formation de la HEIG-VD</p>
+      </article>
+      <article className={styles.gridCol6}>
+        <a href="#"><img src={logoHesSo} alt="Hes-So"/></a>
+      </article>
+    </section>
+  </section>
+);
+
+class NewsLetterSection extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {value: ''};
+
+    this.handleChange = this.handleChange.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
+  }
+
+  handleChange(event) {
+    this.setState({value: event.target.value});
+  }
+
+  handleSubmit(event) {
+    alert('A name was submitted: ' + this.state.value);
+    event.preventDefault();
+  }
+
+  render() {
+    return (
+      <section className={[styles.gridContainer,styles.newsLetterContainer].join(' ')} id={this.props.anchor}>
+        <section className={styles.gridRow}>
+          <article className={styles.gridCol6}>
+            <h1>Inscription à la newsletter</h1>
+            <p>Pour recevoir les dernières informations relatives à la formation et à l’école, ainsi que les dates des événements :</p>
+            <form className={styles.newsLetterForm} onSubmit={this.handleSubmit}>
+              <input type="text" value={this.state.value} onChange={this.handleChange} required placeholder="VOTRE EMAIL *" />
+              <input type="submit" value="Envoyer" />
+            </form>
+          </article>
+          <article className={styles.gridCol6}>
+            <h1>nous suivre</h1>
+            <p>Gardez le contact avec nous !</p>
+            <div className={styles.socialIcons}>
+              <img src={facebookIcon} alt="facebook" />
+              <img src={youtubeIcon} alt="youtube" />
+            </div>
+          </article>
+        </section>
+      </section>
+    );
+  }
+}
 
 class ContactFormSection extends React.Component {
   constructor(props) {
@@ -163,9 +247,9 @@ const AdvantagesSection = props => (
           totalSlides={3}
         >
           <Slider>
-            <Slide index={0}><div className={styles.videoContainer}><iframe src="https://www.youtube.com/embed/Y_hN-sp5bz4" allow="autoplay; encrypted-media" allowfullscreen></iframe></div></Slide>
-            <Slide index={1}><div className={styles.videoContainer}><iframe src="https://www.youtube.com/embed/AL7rPIuvLBY" allow="autoplay; encrypted-media" allowfullscreen></iframe></div></Slide>
-            <Slide index={2}><div className={styles.videoContainer}><iframe src="https://www.youtube.com/embed/jcrkrAh1nOc" allow="autoplay; encrypted-media" allowfullscreen></iframe></div></Slide>
+            <Slide index={0}><div className={styles.videoContainer}><iframe src="https://www.youtube.com/embed/Y_hN-sp5bz4" allowFullScreen></iframe></div></Slide>
+            <Slide index={1}><div className={styles.videoContainer}><iframe src="https://www.youtube.com/embed/AL7rPIuvLBY" allowFullScreen></iframe></div></Slide>
+            <Slide index={2}><div className={styles.videoContainer}><iframe src="https://www.youtube.com/embed/jcrkrAh1nOc" allowFullScreen></iframe></div></Slide>
           </Slider>
           <div>
             <Dot slide={0} className={styles.advantagesSectionSliderDots} />
