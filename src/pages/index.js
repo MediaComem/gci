@@ -23,23 +23,6 @@ import 'pure-react-carousel/dist/react-carousel.es.css';
 import GoogleMapReact from 'google-map-react';
 
 
-class SimpleMap extends React.Component {
-  static defaultProps = {
-    center: {lat: 46.7792276, lng: 6.6571928},
-    zoom: 15
-  };
-
-  render() {
-    return (
-      <GoogleMapReact
-        defaultCenter={this.props.center}
-        defaultZoom={this.props.zoom}
-      >
-      </GoogleMapReact>
-    );
-  }
-}
-
 export default class extends React.Component {
 
   render() {
@@ -153,6 +136,24 @@ class NewsLetterSection extends React.Component {
           </article>
         </section>
       </section>
+    );
+  }
+}
+
+class SimpleMap extends React.Component {
+  static defaultProps = {
+    center: {lat: 46.7792276, lng: 6.6571928},
+    zoom: 15
+  };
+
+  render() {
+    return (
+      <GoogleMapReact
+        bootstrapURLKeys={{ key: ["AIzaSyBczaK_ZflzUQb66u0tq6SCFiCwYeJNCtM"] }}
+        defaultCenter={this.props.center}
+        defaultZoom={this.props.zoom}
+      >
+      </GoogleMapReact>
     );
   }
 }
