@@ -3,7 +3,20 @@ import styles from "./index-css-modules.module.css";
 import { CarouselProvider, Slider, Slide, Dot, DotGroup, Image } from 'pure-react-carousel';
 import slide1 from "../images/slide-2.png";
 import logoHeig from "../images/heig-vd.png";
+import goDown from "../images/go-down.png";
+import skill1 from "../images/GCI-pictos-competences-01.png";
+import skill2 from "../images/GCI-pictos-competences-02.png";
+import skill3 from "../images/GCI-pictos-competences-03.png";
+import skill4 from "../images/GCI-pictos-competences-04.png";
+import skill5 from "../images/GCI-pictos-competences-05.png";
+import skill6 from "../images/GCI-pictos-competences-06.png";
+import skill7 from "../images/GCI-pictos-competences-07.png";
+import skill8 from "../images/GCI-pictos-competences-08.png";
+import skill9 from "../images/GCI-pictos-competences-09.png";
+import skill10 from "../images/GCI-pictos-competences-10.png";
+import skill11 from "../images/GCI-pictos-competences-11.png";
 import 'pure-react-carousel/dist/react-carousel.es.css';
+import YouTube from 'react-youtube';
 console.log(styles)
 
 export default class extends React.Component {
@@ -15,7 +28,7 @@ export default class extends React.Component {
       <Nav/>
       <CarouselProvider
         naturalSlideWidth={10}
-        naturalSlideHeight={10}
+        naturalSlideHeight={16}
         totalSlides={3}
         style={{position:"relative"}}
       >
@@ -28,14 +41,19 @@ export default class extends React.Component {
           <h2>Bachelors</h2>
           <h2>construction &amp; infrastructures</h2>
           <p>Lorem ipsum dolor sit amet consectetur adipiscing, magnis turpis porta rhoncus sociosqu senectus. Feugiat ullamcorper egestas ent tempus magnis</p>
+          <a className={styles.downloadButton} href="#">Télécharger la brochure</a>
           <div>
             <Dot slide={0} className={styles.sliderDot} />
             <Dot slide={1} className={styles.sliderDot} />
             <Dot slide={2} className={styles.sliderDot} />
           </div>
         </div>
+        <a href="#section2" className={styles.goDown}>
+          <img style={{height:'50px'}} src={goDown} alt="Logo HEIG-VD" />
+        </a>
       </CarouselProvider>
       <AdvantagesSection anchor="section2"/>
+      <PaletteSection anchor="section3"/>
       </div>
     );
   }
@@ -53,7 +71,123 @@ const Nav = props => (
 );
 
 const AdvantagesSection = props => (
-  <section id={props.anchor}>
-    <h1>Section2</h1>
+  <section className={styles.gridContainer} id={props.anchor}>
+    <section className={styles.gridRow}>
+      <article className={styles.advantagesSectionContentLeft}>
+        <h1>Les avantages de choisir cette formation plutôt qu’une autre</h1>
+        <p>Devenir ingénieur-e dans les domaines de l'ingénierie civile, c'est devenir un acteur majeur dans la création, l'entretien et le développement de l'espace construit et de ses infrastructures dans le respect du développement économique durable.</p>
+        <p>Notre orientation en construction et infrastructure répond aux exigences pluridisciplinaires liées à la conception, réalisation, rénovation et maintenance de nos infrastructures et de notre patrimoine immobilier</p>
+      </article>
+      <article className={styles.advantagesSectionContentRight}>
+        <CarouselProvider
+          naturalSlideWidth={100}
+          naturalSlideHeight={62}
+          totalSlides={3}
+        >
+          <Slider>
+            <Slide index={0}><div className={styles.videoContainer}><iframe src="https://www.youtube.com/embed/Y_hN-sp5bz4" allow="autoplay; encrypted-media" allowfullscreen></iframe></div></Slide>
+            <Slide index={1}><div className={styles.videoContainer}><iframe src="https://www.youtube.com/embed/AL7rPIuvLBY" allow="autoplay; encrypted-media" allowfullscreen></iframe></div></Slide>
+            <Slide index={2}><div className={styles.videoContainer}><iframe src="https://www.youtube.com/embed/jcrkrAh1nOc" allow="autoplay; encrypted-media" allowfullscreen></iframe></div></Slide>
+          </Slider>
+          <div>
+            <Dot slide={0} className={styles.advantagesSectionSliderDots} />
+            <Dot slide={1} className={styles.advantagesSectionSliderDots} />
+            <Dot slide={2} className={styles.advantagesSectionSliderDots} />
+          </div>
+        </CarouselProvider>
+      </article>
+    </section>
+  </section>
+);
+
+const PaletteSection = props => (
+  <section className={[styles.gridContainer,styles.paletteContainer].join(' ')} id={props.anchor}>
+    <section className={styles.gridRow}>
+      <article className={styles.paletteSectionContentLeft}>
+        <h1>la palette complète des compétences de la formation</h1>
+      </article>
+      <article className={styles.paletteSectionContentRight}>
+        <p>Nos ingénieur-e-s en construction sont très apprécié-e-s par le marché du travail, par leurs compétences techniques et pratiques pointues, qui répondent aux exigences techniques du métier, et leurs compétences sociales qui leur permette d'œuvrer au sein d'équipes variées et interdisciplinaires.</p>
+      </article>
+    </section>
+    <section className={styles.gridRow}>
+      <article className={styles.gridCol4}>
+        <div className={styles.itemContainer}>
+          <img src={skill1} />
+          <p>Concept, calcul et dimensionnement de structures et des ouvrages en bois, en béton, en acier ou en maçonnerie</p>
+        </div>
+      </article>
+      <article className={styles.gridCol4}>
+        <div className={styles.itemContainer}>
+          <img src={skill2} />
+          <p>Maintenance, remise en état, assainissement et rénovation des structures et des constructions</p>
+        </div>
+      </article>
+      <article className={styles.gridCol4}>
+        <div className={styles.itemContainer}>
+          <img src={skill3} />
+          <p>Dimensionnement et réalisation des ouvrages souterrains de la géotechnique</p>
+        </div>
+      </article>
+    </section>
+    <section className={styles.gridRow}>
+      <article className={styles.gridCol4}>
+        <div className={styles.itemContainer}>
+          <img src={skill4} />
+          <p>Conception et développement de projets de construction</p>
+        </div>
+      </article>
+      <article className={styles.gridCol4}>
+        <div className={styles.itemContainer}>
+          <img src={skill5} />
+          <p>Conception et développement de projets de construction</p>
+        </div>
+      </article>
+      <article className={styles.gridCol4}>
+        <div className={styles.itemContainer}>
+          <img src={skill6} />
+          <p>Planification et réalisation de petits et grands projets</p>
+        </div>
+      </article>
+    </section>
+    <section className={styles.gridRow}>
+      <article className={styles.gridCol4}>
+        <div className={styles.itemContainer}>
+          <img src={skill7} />
+          <p>Constructions hydrauliques, gestion des eaux et réalisation d'aménagements hydrauliques</p>
+        </div>
+      </article>
+      <article className={styles.gridCol4}>
+        <div className={styles.itemContainer}>
+          <img src={skill8} />
+          <p>Gestion des risques et dangers naturels</p>
+        </div>
+      </article>
+      <article className={styles.gridCol4}>
+        <div className={styles.itemContainer}>
+          <img src={skill9} />
+          <p>Transport, mobilité et constructions routières, maintenance et remise en état des voies de circulation </p>
+        </div>
+      </article>
+    </section>
+    <section className={styles.gridRow}>
+      <article className={styles.gridCol4}>
+        <div className={styles.itemContainer}>
+          <img src={skill10} />
+          <p>Transport, mobilité et constructions routières, maintenance et remise en état des voies de circulation </p>
+        </div>
+      </article>
+      <article className={styles.gridCol4}>
+        <div className={styles.itemContainer}>
+          <img src={skill11} />
+          <p>Maintenance, remise en état, assainissement et rénovation des structures et des constructions</p>
+        </div>
+      </article>
+      <article className={styles.gridCol4}>
+        <div className={styles.itemContainer}>
+          <a className={styles.downloadShowButton} href="#">Télécharger la brochure</a>
+        </div>
+      </article>
+    </section>
   </section>
 );
