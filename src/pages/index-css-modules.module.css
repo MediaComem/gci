@@ -81,9 +81,11 @@ body{
 	border:1px #fff solid;
 	padding: 7px 14px;
 	align-self: flex-start;
-	font-size: 0.9em;
+	font-size: 0.8em;
 	margin-top: 10px;
 	margin-bottom: 50px;
+	text-transform: uppercase;
+	margin-right: 30px;
 }
 
 .goDown {
@@ -117,6 +119,9 @@ body{
 }
 .gridCol4{
 	flex-basis: 40%;
+}
+.gridCol6{
+	flex-basis: 50%;
 }
 .gridRow article{
 	padding-left: 15px;
@@ -183,11 +188,56 @@ body{
 }
 .downloadShowButton{
 	text-decoration: none;
-	color:#ccc;
-	border:1px #ccc solid;
+	color:#8a959e;
+	border:1px #8a959e solid;
 	padding: 7px 14px;
 	align-self: flex-end;
-	font-size: 0.9em;
+	font-size: 0.8em;
 	margin-top: 10px;
 	margin-bottom: 50px;
+	text-transform: uppercase;
+}
+.informatonsContainer{
+	color:#fff;
+	background: #000;
+}
+.informatonsContainer h1{
+	text-transform: uppercase;
+}
+.informatonsContainer p{
+	margin-bottom: 50px;
+}
+.contactFormContainer{
+	background: #fff;
+	color:#000;
+}
+.contactFormContainer h1{
+	text-transform: uppercase;
+}
+.contactFormHeigLogo{
+	max-width: 220px;
+	margin-top: 50px;
+	margin-bottom: 40px;
+}
+.contactList{
+	list-style-type: none;
+}
+.contactForm{
+	display: flex;
+	flex-direction:column;
+}
+.contactForm input, .contactForm textarea{
+	padding: 12px 9px;
+	margin-bottom: 20px;
+}
+.contactForm input:first-child{
+	margin-top: 20px;
+}
+.contactForm input[type="submit"]{
+	border:none;
+	background: #dce2e7;
+	padding: 15px 20px;
+	text-transform: uppercase;
+	align-self: flex-start;
+	font-weight: bold;
 }

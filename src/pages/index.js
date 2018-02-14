@@ -3,6 +3,7 @@ import styles from "./index-css-modules.module.css";
 import { CarouselProvider, Slider, Slide, Dot, DotGroup, Image } from 'pure-react-carousel';
 import slide1 from "../images/slide-2.png";
 import logoHeig from "../images/heig-vd.png";
+import logoHeigBlack from "../images/heig-vd-black.png";
 import goDown from "../images/go-down.png";
 import skill1 from "../images/GCI-pictos-competences-01.png";
 import skill2 from "../images/GCI-pictos-competences-02.png";
@@ -54,6 +55,8 @@ export default class extends React.Component {
       </CarouselProvider>
       <AdvantagesSection anchor="section2"/>
       <PaletteSection anchor="section3"/>
+      <InformationsSection anchor="section4"/>
+      <ContactFormSection anchor="section5"/>
       </div>
     );
   }
@@ -68,6 +71,81 @@ const Nav = props => (
       <li><a href="#section4">Nous contacter</a></li>
     </ul>
   </nav>
+);
+
+class ContactFormSection extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {value: ''};
+
+    this.handleChange = this.handleChange.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
+  }
+
+  handleChange(event) {
+    this.setState({value: event.target.value});
+  }
+
+  handleSubmit(event) {
+    alert('A name was submitted: ' + this.state.value);
+    event.preventDefault();
+  }
+
+  render() {
+    return (
+      <section className={[styles.gridContainer,styles.contactFormContainer].join(' ')} id={this.props.anchor}>
+        <section className={styles.gridRow}>
+          <article className={styles.gridCol6}>
+            <h1>prenez directement contact avec nous !</h1>
+            <p>Si vous avez des interrogations concernant la formation ou l’école, n’hésitez pas à prendre contact avec nous via le formulaire ou par téléphone, nous nous ferons un plaisir de répondre à vos questions. </p>
+            <img className={styles.contactFormHeigLogo} src={logoHeigBlack} alt="Logo HEIG-VD" />
+            <ul className={styles.contactList}>
+              <li>
+                Campus de Cheseaux
+              </li>
+              <li style={{marginTop:'10px'}}>
+                Route de Cheseaux 1
+              </li>
+              <li>
+                1401 Yverdon-les-Bains
+              </li>
+              <li style={{marginTop:'10px'}}>
+                +41 (0)24 557 63 30
+              </li>
+            </ul>
+          </article>
+          <article className={styles.gridCol6}>
+            <p>Merci de remplir les champs ci-dessous :</p>
+            <form className={styles.contactForm} onSubmit={this.handleSubmit}>
+              <input type="text" value={this.state.value} onChange={this.handleChange} required placeholder="VOTRE NOM ET PRÉNOM *" />
+              <input type="text" value={this.state.value} onChange={this.handleChange} required placeholder="VOTRE EMAIL *" />
+              <input type="text" value={this.state.value} onChange={this.handleChange} required placeholder="VOTRE TÉLÉPHONE *" />
+              <textarea value={this.state.value} onChange={this.handleChange} required placeholder="VOTRE MESSAGE *" />
+              <input type="submit" value="Envoyer" />
+            </form>
+          </article>
+        </section>
+      </section>
+    );
+  }
+}
+
+const InformationsSection = props => (
+  <section className={[styles.gridContainer,styles.informatonsContainer].join(' ')} id={props.anchor}>
+    <section className={styles.gridRow}>
+      <article className={styles.gridCol6}>
+        <h1>informations pratiques</h1>
+        <p>De nombreux défis, réservés à l'esprit inventif et créatif, que nos diplômé-e-s se feront le plaisir de relever. Découvrez la variété du plan d’études ainsi que les condissions d’admission et autres informations relatives à la formation proposée, ci-dessous:</p>
+        <a className={styles.downloadButton} href="#">Plan d’études</a>
+        <a className={styles.downloadButton} href="#">Admissions et autres infos</a>
+      </article>
+      <article className={styles.gridCol6}>
+        <h1>Recherche & développement</h1>
+        <p>L'institut d’ingénierie du territoire (insit) de la HEIG-VD a pour objectif principal de renforcer sa position de centre de compétences en ingénierie territoriale et ce, dans sa relation avec le tissu économique local, national et international.</p>
+        <a className={styles.downloadButton} href="#">En savoir plus</a>
+      </article>
+    </section>
+  </section>
 );
 
 const AdvantagesSection = props => (
