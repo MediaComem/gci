@@ -12,6 +12,7 @@ body{
 	align-items: center;
 	text-transform: uppercase;
 	letter-spacing: 2px;
+	font-size: 0.8em;
 }
 .mainNav ul{
 	margin: 0;

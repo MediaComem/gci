@@ -23,6 +23,7 @@ import skill10 from "../images/GCI-pictos-competences-10.png";
 import skill11 from "../images/GCI-pictos-competences-11.png";
 import 'pure-react-carousel/dist/react-carousel.es.css';
 import GoogleMapReact from 'google-map-react';
+import ScrollableAnchor from 'react-scrollable-anchor'
 
 
 export default class extends React.Component {
@@ -54,18 +55,18 @@ export default class extends React.Component {
             <Dot slide={2} className={styles.sliderDot} />
           </div>
         </div>
-        <a href="#section2" className={styles.goDown}>
+        <a href="#formation" className={styles.goDown}>
           <img style={{height:'50px'}} src={goDown} alt="Logo HEIG-VD" />
         </a>
       </CarouselProvider>
-      <AdvantagesSection anchor="section2"/>
+      <AdvantagesSection anchor="formation"/>
       <PaletteSection anchor="section3"/>
-      <InformationsSection anchor="section4"/>
-      <ContactFormSection anchor="section5"/>
+      <InformationsSection anchor="planetudes"/>
+      <ContactFormSection anchor="contact"/>
       <div style={{height:'300px'}}>
         <SimpleMap/>
       </div>
-      <NewsLetterSection anchor='section6' />
+      <NewsLetterSection anchor='section4' />
       <Footer/>
       </div>
     );
@@ -76,9 +77,9 @@ const Nav = props => (
   <nav className={styles.mainNav}>
     <ul className={styles.mainNavUl}>
       <li><a href="#section1">Accueil</a></li>
-      <li><a href="#section2">Formation</a></li>
-      <li><a href="#section3">Plan d'études</a></li>
-      <li><a className={styles.mainNavContact} href="#section4">Nous contacter</a></li>
+      <li><a href="#formation">Formation</a></li>
+      <li><a href="#planetudes">Plan d'études</a></li>
+      <li><a className={styles.mainNavContact} href="#contact">Nous contacter</a></li>
       <li><a href="#"><img src={facebookIconWhite} alt="facebook" /></a></li>
       <li><a href="#"><img src={youtubeIconWhite} alt="youtube" /></a></li>
     </ul>
@@ -120,7 +121,7 @@ class NewsLetterSection extends React.Component {
 
   render() {
     return (
-      <section className={[styles.gridContainer,styles.newsLetterContainer].join(' ')} id={this.props.anchor}>
+        <section className={[styles.gridContainer,styles.newsLetterContainer].join(' ')}>
         <section className={styles.gridRow}>
           <article className={styles.gridCol6}>
             <h1>Inscription à la newsletter</h1>
@@ -139,7 +140,7 @@ class NewsLetterSection extends React.Component {
             </div>
           </article>
         </section>
-      </section>
+        </section>
     );
   }
 }
@@ -182,89 +183,95 @@ class ContactFormSection extends React.Component {
 
   render() {
     return (
-      <section className={[styles.gridContainer,styles.contactFormContainer].join(' ')} id={this.props.anchor}>
-        <section className={styles.gridRow}>
-          <article className={styles.gridCol6}>
-            <h1>prenez directement contact avec nous !</h1>
-            <p>Si vous avez des interrogations concernant la formation ou l’école, n’hésitez pas à prendre contact avec nous via le formulaire ou par téléphone, nous nous ferons un plaisir de répondre à vos questions. </p>
-            <img className={styles.contactFormHeigLogo} src={logoHeigBlack} alt="Logo HEIG-VD" />
-            <ul className={styles.contactList}>
-              <li>
-                Campus de Cheseaux
-              </li>
-              <li style={{marginTop:'10px'}}>
-                Route de Cheseaux 1
-              </li>
-              <li>
-                1401 Yverdon-les-Bains
-              </li>
-              <li style={{marginTop:'10px'}}>
-                +41 (0)24 557 63 30
-              </li>
-            </ul>
-          </article>
-          <article className={styles.gridCol6}>
-            <p>Merci de remplir les champs ci-dessous :</p>
-            <form className={styles.contactForm} onSubmit={this.handleSubmit}>
-              <input type="text" value={this.state.value} onChange={this.handleChange} required placeholder="VOTRE NOM ET PRÉNOM *" />
-              <input type="text" value={this.state.value} onChange={this.handleChange} required placeholder="VOTRE EMAIL *" />
-              <input type="text" value={this.state.value} onChange={this.handleChange} required placeholder="VOTRE TÉLÉPHONE *" />
-              <textarea value={this.state.value} onChange={this.handleChange} required placeholder="VOTRE MESSAGE *" />
-              <input type="submit" value="Envoyer" />
-            </form>
-          </article>
+      <ScrollableAnchor id={this.props.anchor}>
+        <section className={[styles.gridContainer,styles.contactFormContainer].join(' ')}>
+          <section className={styles.gridRow}>
+            <article className={styles.gridCol6}>
+              <h1>prenez directement contact avec nous !</h1>
+              <p>Si vous avez des interrogations concernant la formation ou l’école, n’hésitez pas à prendre contact avec nous via le formulaire ou par téléphone, nous nous ferons un plaisir de répondre à vos questions. </p>
+              <img className={styles.contactFormHeigLogo} src={logoHeigBlack} alt="Logo HEIG-VD" />
+              <ul className={styles.contactList}>
+                <li>
+                  Campus de Cheseaux
+                </li>
+                <li style={{marginTop:'10px'}}>
+                  Route de Cheseaux 1
+                </li>
+                <li>
+                  1401 Yverdon-les-Bains
+                </li>
+                <li style={{marginTop:'10px'}}>
+                  +41 (0)24 557 63 30
+                </li>
+              </ul>
+            </article>
+            <article className={styles.gridCol6}>
+              <p>Merci de remplir les champs ci-dessous :</p>
+              <form className={styles.contactForm} onSubmit={this.handleSubmit}>
+                <input type="text" value={this.state.value} onChange={this.handleChange} required placeholder="VOTRE NOM ET PRÉNOM *" />
+                <input type="text" value={this.state.value} onChange={this.handleChange} required placeholder="VOTRE EMAIL *" />
+                <input type="text" value={this.state.value} onChange={this.handleChange} required placeholder="VOTRE TÉLÉPHONE *" />
+                <textarea value={this.state.value} onChange={this.handleChange} required placeholder="VOTRE MESSAGE *" />
+                <input type="submit" value="Envoyer" />
+              </form>
+            </article>
+          </section>
         </section>
-      </section>
+      </ScrollableAnchor>
     );
   }
 }
 
 const InformationsSection = props => (
-  <section className={[styles.gridContainer,styles.informatonsContainer].join(' ')} id={props.anchor}>
-    <section className={styles.gridRow}>
-      <article className={styles.gridCol6}>
-        <h1>informations pratiques</h1>
-        <p>De nombreux défis, réservés à l'esprit inventif et créatif, que nos diplômé-e-s se feront le plaisir de relever. Découvrez la variété du plan d’études ainsi que les condissions d’admission et autres informations relatives à la formation proposée, ci-dessous:</p>
-        <a className={styles.downloadButton} href="#">Plan d’études</a>
-        <a className={styles.downloadButton} href="#">Admissions et autres infos</a>
-      </article>
-      <article className={styles.gridCol6}>
-        <h1>Recherche & développement</h1>
-        <p>L'institut d’ingénierie du territoire (insit) de la HEIG-VD a pour objectif principal de renforcer sa position de centre de compétences en ingénierie territoriale et ce, dans sa relation avec le tissu économique local, national et international.</p>
-        <a className={styles.downloadButton} href="#">En savoir plus</a>
-      </article>
+  <ScrollableAnchor id={props.anchor}>
+    <section className={[styles.gridContainer,styles.informatonsContainer].join(' ')}>
+      <section className={styles.gridRow}>
+        <article className={styles.gridCol6}>
+          <h1>informations pratiques</h1>
+          <p>De nombreux défis, réservés à l'esprit inventif et créatif, que nos diplômé-e-s se feront le plaisir de relever. Découvrez la variété du plan d’études ainsi que les condissions d’admission et autres informations relatives à la formation proposée, ci-dessous:</p>
+          <a className={styles.downloadButton} href="#">Plan d’études</a>
+          <a className={styles.downloadButton} href="#">Admissions et autres infos</a>
+        </article>
+        <article className={styles.gridCol6}>
+          <h1>Recherche & développement</h1>
+          <p>L'institut d’ingénierie du territoire (insit) de la HEIG-VD a pour objectif principal de renforcer sa position de centre de compétences en ingénierie territoriale et ce, dans sa relation avec le tissu économique local, national et international.</p>
+          <a className={styles.downloadButton} href="#">En savoir plus</a>
+        </article>
+      </section>
     </section>
-  </section>
+  </ScrollableAnchor>
 );
 
 const AdvantagesSection = props => (
-  <section className={styles.gridContainer} id={props.anchor}>
-    <section className={styles.gridRow}>
-      <article className={styles.advantagesSectionContentLeft}>
-        <h1>Les avantages de choisir cette formation plutôt qu’une autre</h1>
-        <p>Devenir ingénieur-e dans les domaines de l'ingénierie civile, c'est devenir un acteur majeur dans la création, l'entretien et le développement de l'espace construit et de ses infrastructures dans le respect du développement économique durable.</p>
-        <p>Notre orientation en construction et infrastructure répond aux exigences pluridisciplinaires liées à la conception, réalisation, rénovation et maintenance de nos infrastructures et de notre patrimoine immobilier</p>
-      </article>
-      <article className={styles.advantagesSectionContentRight}>
-        <CarouselProvider
-          naturalSlideWidth={100}
-          naturalSlideHeight={62}
-          totalSlides={3}
-        >
-          <Slider>
-            <Slide index={0}><div className={styles.videoContainer}><iframe src="https://www.youtube.com/embed/Y_hN-sp5bz4" allowFullScreen></iframe></div></Slide>
-            <Slide index={1}><div className={styles.videoContainer}><iframe src="https://www.youtube.com/embed/AL7rPIuvLBY" allowFullScreen></iframe></div></Slide>
-            <Slide index={2}><div className={styles.videoContainer}><iframe src="https://www.youtube.com/embed/jcrkrAh1nOc" allowFullScreen></iframe></div></Slide>
-          </Slider>
-          <div className={styles.advantagesSectionSliderDotsContainer}>
-            <Dot slide={0} className={styles.advantagesSectionSliderDots} />
-            <Dot slide={1} className={styles.advantagesSectionSliderDots} />
-            <Dot slide={2} className={styles.advantagesSectionSliderDots} />
-          </div>
-        </CarouselProvider>
-      </article>
+  <ScrollableAnchor id={props.anchor}>
+    <section className={styles.gridContainer}>
+      <section className={styles.gridRow}>
+        <article className={styles.advantagesSectionContentLeft}>
+          <h1>Les avantages de choisir cette formation plutôt qu’une autre</h1>
+          <p>Devenir ingénieur-e dans les domaines de l'ingénierie civile, c'est devenir un acteur majeur dans la création, l'entretien et le développement de l'espace construit et de ses infrastructures dans le respect du développement économique durable.</p>
+          <p>Notre orientation en construction et infrastructure répond aux exigences pluridisciplinaires liées à la conception, réalisation, rénovation et maintenance de nos infrastructures et de notre patrimoine immobilier</p>
+        </article>
+        <article className={styles.advantagesSectionContentRight}>
+          <CarouselProvider
+            naturalSlideWidth={100}
+            naturalSlideHeight={62}
+            totalSlides={3}
+          >
+            <Slider>
+              <Slide index={0}><div className={styles.videoContainer}><iframe src="https://www.youtube.com/embed/Y_hN-sp5bz4" allowFullScreen></iframe></div></Slide>
+              <Slide index={1}><div className={styles.videoContainer}><iframe src="https://www.youtube.com/embed/AL7rPIuvLBY" allowFullScreen></iframe></div></Slide>
+              <Slide index={2}><div className={styles.videoContainer}><iframe src="https://www.youtube.com/embed/jcrkrAh1nOc" allowFullScreen></iframe></div></Slide>
+            </Slider>
+            <div className={styles.advantagesSectionSliderDotsContainer}>
+              <Dot slide={0} className={styles.advantagesSectionSliderDots} />
+              <Dot slide={1} className={styles.advantagesSectionSliderDots} />
+              <Dot slide={2} className={styles.advantagesSectionSliderDots} />
+            </div>
+          </CarouselProvider>
+        </article>
+      </section>
     </section>
-  </section>
+  </ScrollableAnchor>
 );
 
 const PaletteSection = props => (
