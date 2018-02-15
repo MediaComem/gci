@@ -31,43 +31,43 @@ export default class extends React.Component {
   render() {
     return (
       <div>
-      <img className={styles.heigLogo} src={logoHeig} alt="Logo HEIG-VD" />
-      <Nav/>
-      <CarouselProvider
-        naturalSlideWidth={10}
-        naturalSlideHeight={16}
-        totalSlides={3}
-        style={{position:"relative"}}
-      >
-        <Slider style={{height:'100vh'}}>
-          <Slide index={0} style={{backgroundColor:'#42a155'}}><div className={styles.slidesImageContainer}><Image className={styles.slidesImageContainerImage} src={slide1} hasMasterSpinner={true}/></div></Slide>
-          <Slide index={1} style={{backgroundColor:'blue'}}>I am the second Slide.</Slide>
-          <Slide index={2} style={{backgroundColor:'green'}}>I am the third Slide.</Slide>
-        </Slider>
-        <div className={styles.slidesFixedContent}>
-          <h2>Bachelors</h2>
-          <h2>construction &amp; infrastructures</h2>
-          <p>Lorem ipsum dolor sit amet consectetur adipiscing, magnis turpis porta rhoncus sociosqu senectus. Feugiat ullamcorper egestas ent tempus magnis</p>
-          <a className={styles.downloadButton} href="#">Télécharger la brochure</a>
-          <div>
-            <Dot slide={0} className={styles.sliderDot} />
-            <Dot slide={1} className={styles.sliderDot} />
-            <Dot slide={2} className={styles.sliderDot} />
+        <img className={styles.heigLogo} src={logoHeig} alt="Logo HEIG-VD" />
+        <Nav/>
+        <CarouselProvider
+          naturalSlideWidth={10}
+          naturalSlideHeight={16}
+          totalSlides={3}
+          style={{position:"relative"}}
+        >
+          <Slider style={{height:'100vh'}}>
+            <Slide index={0} style={{backgroundColor:'#42a155'}}><div className={styles.slidesImageContainer}><Image className={styles.slidesImageContainerImage} src={slide1} hasMasterSpinner={true}/></div></Slide>
+            <Slide index={1} style={{backgroundColor:'blue'}}>I am the second Slide.</Slide>
+            <Slide index={2} style={{backgroundColor:'green'}}>I am the third Slide.</Slide>
+          </Slider>
+          <div className={styles.slidesFixedContent}>
+            <h2>Bachelors</h2>
+            <h2>construction &amp; infrastructures</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipiscing, magnis turpis porta rhoncus sociosqu senectus. Feugiat ullamcorper egestas ent tempus magnis</p>
+            <a className={styles.downloadButton} href="#">Télécharger la brochure</a>
+            <div>
+              <Dot slide={0} className={styles.sliderDot} />
+              <Dot slide={1} className={styles.sliderDot} />
+              <Dot slide={2} className={styles.sliderDot} />
+            </div>
           </div>
+          <a href="#formation" className={styles.goDown}>
+            <img style={{height:'50px'}} src={goDown} alt="Logo HEIG-VD" />
+          </a>
+        </CarouselProvider>
+        <AdvantagesSection anchor="formation"/>
+        <PaletteSection anchor="section3"/>
+        <InformationsSection anchor="planetudes"/>
+        <ContactFormSection anchor="contact"/>
+        <div style={{height:'300px'}}>
+          <SimpleMap/>
         </div>
-        <a href="#formation" className={styles.goDown}>
-          <img style={{height:'50px'}} src={goDown} alt="Logo HEIG-VD" />
-        </a>
-      </CarouselProvider>
-      <AdvantagesSection anchor="formation"/>
-      <PaletteSection anchor="section3"/>
-      <InformationsSection anchor="planetudes"/>
-      <ContactFormSection anchor="contact"/>
-      <div style={{height:'300px'}}>
-        <SimpleMap/>
-      </div>
-      <NewsLetterSection anchor='section4' />
-      <Footer/>
+        <NewsLetterSection anchor='section4' />
+        <Footer/>
       </div>
     );
   }
@@ -90,11 +90,11 @@ const Nav = props => (
 const Footer = props => (
   <section className={[styles.gridContainer,styles.footerContainer].join(' ')} id={props.anchor}>
     <section className={styles.gridRow}>
-      <article className={styles.gridCol6}>
+      <article className={styles.gridCol5}>
         <p>Filière Géomatique orientation Construction et Infrastructures (GCI) </p>
         <p>Une formation de la HEIG-VD</p>
       </article>
-      <article className={styles.gridCol6}>
+      <article className={styles.gridCol5}>
         <a href="#"><img src={logoHesSo} alt="Hes-So"/></a>
       </article>
     </section>
@@ -123,7 +123,7 @@ class NewsLetterSection extends React.Component {
     return (
         <section className={[styles.gridContainer,styles.newsLetterContainer].join(' ')}>
         <section className={styles.gridRow}>
-          <article className={styles.gridCol6}>
+          <article className={styles.gridCol5}>
             <h1>Inscription à la newsletter</h1>
             <p>Pour recevoir les dernières informations relatives à la formation et à l’école, ainsi que les dates des événements :</p>
             <form className={styles.newsLetterForm} onSubmit={this.handleSubmit}>
@@ -131,7 +131,7 @@ class NewsLetterSection extends React.Component {
               <input type="submit" value="Envoyer" />
             </form>
           </article>
-          <article className={styles.gridCol6}>
+          <article className={styles.gridCol5}>
             <h1>nous suivre</h1>
             <p>Gardez le contact avec nous !</p>
             <div className={styles.socialIcons}>
@@ -205,7 +205,7 @@ class ContactFormSection extends React.Component {
                 </li>
               </ul>
             </article>
-            <article className={styles.gridCol6}>
+            <article className={styles.gridCol5}>
               <p>Merci de remplir les champs ci-dessous :</p>
               <form className={styles.contactForm} onSubmit={this.handleSubmit}>
                 <input type="text" value={this.state.value} onChange={this.handleChange} required placeholder="VOTRE NOM ET PRÉNOM *" />
@@ -226,13 +226,13 @@ const InformationsSection = props => (
   <ScrollableAnchor id={props.anchor}>
     <section className={[styles.gridContainer,styles.informatonsContainer].join(' ')}>
       <section className={styles.gridRow}>
-        <article className={styles.gridCol6}>
+        <article className={styles.gridCol5}>
           <h1>informations pratiques</h1>
           <p>De nombreux défis, réservés à l'esprit inventif et créatif, que nos diplômé-e-s se feront le plaisir de relever. Découvrez la variété du plan d’études ainsi que les condissions d’admission et autres informations relatives à la formation proposée, ci-dessous:</p>
           <a className={styles.downloadButton} href="#">Plan d’études</a>
           <a className={styles.downloadButton} href="#">Admissions et autres infos</a>
         </article>
-        <article className={styles.gridCol6}>
+        <article className={styles.gridCol5}>
           <h1>Recherche & développement</h1>
           <p>L'institut d’ingénierie du territoire (insit) de la HEIG-VD a pour objectif principal de renforcer sa position de centre de compétences en ingénierie territoriale et ce, dans sa relation avec le tissu économique local, national et international.</p>
           <a className={styles.downloadButton} href="#">En savoir plus</a>
@@ -246,12 +246,12 @@ const AdvantagesSection = props => (
   <ScrollableAnchor id={props.anchor}>
     <section className={styles.gridContainer}>
       <section className={styles.gridRow}>
-        <article className={styles.advantagesSectionContentLeft}>
+        <article className={[styles.advantagesSectionContentLeft,styles.gridCol5].join(' ')}>
           <h1>Les avantages de choisir cette formation plutôt qu’une autre</h1>
           <p>Devenir ingénieur-e dans les domaines de l'ingénierie civile, c'est devenir un acteur majeur dans la création, l'entretien et le développement de l'espace construit et de ses infrastructures dans le respect du développement économique durable.</p>
           <p>Notre orientation en construction et infrastructure répond aux exigences pluridisciplinaires liées à la conception, réalisation, rénovation et maintenance de nos infrastructures et de notre patrimoine immobilier</p>
         </article>
-        <article className={styles.advantagesSectionContentRight}>
+        <article className={[styles.advantagesSectionContentRight,styles.gridCol5].join(' ')}>
           <CarouselProvider
             naturalSlideWidth={100}
             naturalSlideHeight={62}
@@ -277,14 +277,14 @@ const AdvantagesSection = props => (
 const PaletteSection = props => (
   <section className={[styles.gridContainer,styles.paletteContainer].join(' ')} id={props.anchor}>
     <section className={styles.gridRow}>
-      <article className={styles.paletteSectionContentLeft}>
+      <article className={[styles.paletteSectionContentLeft,styles.gridCol3].join(' ')}>
         <h1>la palette complète des compétences de la formation</h1>
       </article>
-      <article className={styles.paletteSectionContentRight}>
+      <article className={styles.gridCol7}>
         <p>Nos ingénieur-e-s en construction sont très apprécié-e-s par le marché du travail, par leurs compétences techniques et pratiques pointues, qui répondent aux exigences techniques du métier, et leurs compétences sociales qui leur permette d'œuvrer au sein d'équipes variées et interdisciplinaires.</p>
       </article>
     </section>
-    <section className={styles.gridRow}>
+    <section className={[styles.gridRow,styles.paletteGroup].join(' ')}>
       <article className={styles.gridCol4}>
         <div className={styles.itemContainer}>
           <img src={skill1} />
@@ -304,7 +304,7 @@ const PaletteSection = props => (
         </div>
       </article>
     </section>
-    <section className={styles.gridRow}>
+    <section className={[styles.gridRow,styles.paletteGroup].join(' ')}>
       <article className={styles.gridCol4}>
         <div className={styles.itemContainer}>
           <img src={skill4} />
@@ -324,7 +324,7 @@ const PaletteSection = props => (
         </div>
       </article>
     </section>
-    <section className={styles.gridRow}>
+    <section className={[styles.gridRow,styles.paletteGroup].join(' ')}>
       <article className={styles.gridCol4}>
         <div className={styles.itemContainer}>
           <img src={skill7} />
@@ -344,7 +344,7 @@ const PaletteSection = props => (
         </div>
       </article>
     </section>
-    <section className={styles.gridRow}>
+    <section className={[styles.gridRow,styles.paletteGroup].join(' ')}>
       <article className={styles.gridCol4}>
         <div className={styles.itemContainer}>
           <img src={skill10} />
@@ -359,7 +359,7 @@ const PaletteSection = props => (
       </article>
       <article className={styles.gridCol4}>
         <div className={styles.itemContainer}>
-          <a className={styles.downloadShowButton} href="#">Télécharger la brochure</a>
+          <a className={styles.paletteDownloadButton} href="#">Télécharger la brochure</a>
         </div>
       </article>
     </section>

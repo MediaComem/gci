@@ -128,25 +128,33 @@ body{
 	max-width: 1100px;
 	width: 100%;
 }
+.gridCol3{
+	flex-basis: 30%;
+}
 .gridCol4{
 	flex-basis: 40%;
 }
-.gridCol6{
+.gridCol5{
 	flex-basis: 50%;
+}
+.gridCol7{
+	flex-basis: 70%;
+}
+@media (max-width: 800px){
+	.gridRow{
+		flex-wrap: wrap;
+	}
+	.gridCol3,.gridCol4,.gridCol5,.gridCol7{
+		flex-basis: 100%;
+	}
 }
 .gridRow article{
 	padding-left: 15px;
 	padding-right: 15px;
 }
-.advantagesSectionContentLeft{
-	flex-basis: 50%;
-}
 .advantagesSectionContentLeft h1{
 	text-transform: uppercase;
 	letter-spacing: 2px;
-}
-.advantagesSectionContentRight{
-	flex-basis: 50%;
 }
 .advantagesSectionSliderDotsContainer{
 	margin-top: 10px;
@@ -181,15 +189,9 @@ body{
 	background: #dce2e7;
 	color:#8a959e;
 }
-.paletteSectionContentLeft{
-	flex-basis: 30%;
-}
 .paletteSectionContentLeft h1{
 	text-transform: uppercase;
 	letter-spacing: 2px;
-}
-.paletteSectionContentRight{
-	flex-basis: 70%;
 }
 .itemContainer{
 	display: flex;
@@ -204,7 +206,7 @@ body{
 	margin-top: 4px;
 	font-size: 0.7em;
 }
-.downloadShowButton{
+.paletteDownloadButton{
 	text-decoration: none;
 	color:#8a959e;
 	border:1px #8a959e solid;
@@ -214,6 +216,23 @@ body{
 	margin-top: 10px;
 	margin-bottom: 50px;
 	text-transform: uppercase;
+}
+@media (max-width: 800px){
+	.itemContainer p{
+		margin-top: 8px;
+		font-size: 0.9em;
+		margin-bottom: 0;
+	}
+	.paletteGroup{
+		padding-bottom: 0;
+		padding-top: 0;
+	}
+	.itemContainer{
+		margin-bottom: 5px;
+	}
+	.paletteDownloadButton{
+		margin-top: 20px;
+	}
 }
 .informatonsContainer{
 	color:#fff;
