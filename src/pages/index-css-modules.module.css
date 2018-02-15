@@ -11,6 +11,7 @@ body{
 	display: flex;
 	align-items: center;
 	text-transform: uppercase;
+	letter-spacing: 2px;
 }
 .mainNav ul{
 	margin: 0;
@@ -24,6 +25,13 @@ body{
 	color:#fff;
 	margin-right: 10px;
 	margin-left: 10px;
+}
+.mainNavContact { 
+	background: #358445;
+	padding: 5px 10px;
+}
+.mainNav ul li img { 
+	max-height: 25px;
 }
 .heigLogo{
 	position:absolute;
@@ -47,6 +55,7 @@ body{
 	text-transform: uppercase;
 	margin-bottom: 0;
 	margin-top: 0;
+	letter-spacing: 2px;
 }
 .slidesFixedContent h2:nth-child(2),.slidesFixedContent p{
 	color:#fff;
@@ -133,9 +142,13 @@ body{
 }
 .advantagesSectionContentLeft h1{
 	text-transform: uppercase;
+	letter-spacing: 2px;
 }
 .advantagesSectionContentRight{
 	flex-basis: 50%;
+}
+.advantagesSectionSliderDotsContainer{
+	margin-top: 10px;
 }
 .advantagesSectionSliderDots{
 	background:#b4b4b4;
@@ -165,18 +178,21 @@ body{
 }
 .paletteContainer{
 	background: #dce2e7;
+	color:#8a959e;
 }
 .paletteSectionContentLeft{
 	flex-basis: 30%;
 }
 .paletteSectionContentLeft h1{
 	text-transform: uppercase;
+	letter-spacing: 2px;
 }
 .paletteSectionContentRight{
 	flex-basis: 70%;
 }
 .itemContainer{
 	display: flex;
+	color:#000;
 }
 .itemContainer img{
 	align-self: flex-start;
@@ -204,6 +220,7 @@ body{
 }
 .informatonsContainer h1{
 	text-transform: uppercase;
+	letter-spacing: 2px;
 }
 .informatonsContainer p{
 	margin-bottom: 50px;
@@ -214,6 +231,7 @@ body{
 }
 .contactFormContainer h1{
 	text-transform: uppercase;
+	letter-spacing: 2px;
 }
 .contactFormHeigLogo{
 	max-width: 220px;
@@ -249,6 +267,7 @@ body{
 }
 .newsLetterContainer h1{
 	text-transform: uppercase;
+	letter-spacing: 2px;
 }
 .newsLetterContainer p{
 	margin-bottom: 50px;

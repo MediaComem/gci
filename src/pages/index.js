@@ -6,7 +6,9 @@ import logoHeig from "../images/heig-vd.png";
 import logoHesSo from "../images/hes-so.png";
 import logoHeigBlack from "../images/heig-vd-black.png";
 import facebookIcon from "../images/facebook.png";
+import facebookIconWhite from "../images/facebook-white.png";
 import youtubeIcon from "../images/youtube.png";
+import youtubeIconWhite from "../images/youtube-white.png";
 import goDown from "../images/go-down.png";
 import skill1 from "../images/GCI-pictos-competences-01.png";
 import skill2 from "../images/GCI-pictos-competences-02.png";
@@ -76,7 +78,9 @@ const Nav = props => (
       <li><a href="#section1">Accueil</a></li>
       <li><a href="#section2">Formation</a></li>
       <li><a href="#section3">Plan d'études</a></li>
-      <li><a href="#section4">Nous contacter</a></li>
+      <li><a className={styles.mainNavContact} href="#section4">Nous contacter</a></li>
+      <li><a href="#"><img src={facebookIconWhite} alt="facebook" /></a></li>
+      <li><a href="#"><img src={youtubeIconWhite} alt="youtube" /></a></li>
     </ul>
   </nav>
 );
@@ -252,7 +256,7 @@ const AdvantagesSection = props => (
             <Slide index={1}><div className={styles.videoContainer}><iframe src="https://www.youtube.com/embed/AL7rPIuvLBY" allowFullScreen></iframe></div></Slide>
             <Slide index={2}><div className={styles.videoContainer}><iframe src="https://www.youtube.com/embed/jcrkrAh1nOc" allowFullScreen></iframe></div></Slide>
           </Slider>
-          <div>
+          <div className={styles.advantagesSectionSliderDotsContainer}>
             <Dot slide={0} className={styles.advantagesSectionSliderDots} />
             <Dot slide={1} className={styles.advantagesSectionSliderDots} />
             <Dot slide={2} className={styles.advantagesSectionSliderDots} />
