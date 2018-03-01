@@ -11,6 +11,7 @@ import facebookIconWhite from "../images/facebook-white.png";
 import youtubeIcon from "../images/youtube.png";
 import youtubeIconWhite from "../images/youtube-white.png";
 import goDown from "../images/go-down.png";
+import infoBackground from "../images/info-background.jpg";
 import skill1 from "../images/GCI-pictos-competences-01.png";
 import skill2 from "../images/GCI-pictos-competences-02.png";
 import skill3 from "../images/GCI-pictos-competences-03.png";
@@ -170,18 +171,40 @@ class SimpleMap extends React.Component {
 class ContactFormSection extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {value: ''};
+    this.state = {names: '',email: '',phone:'', 'message':'',event:false, studentDiscuss:false, meetMarcoViviani:false};
 
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   handleChange(event) {
-    this.setState({value: event.target.value});
+    const target = event.target;
+    const value = target.type === 'checkbox' ? target.checked : target.value;
+    const name = target.name;
+
+    this.setState({
+      [name]: value
+    });
   }
 
   handleSubmit(event) {
-    alert('A name was submitted: ' + this.state.value);
+    var value = this.state;
+    console.log(value)
+    // if(value != null){
+    //   fetch('https://hooks.zapier.com/hooks/catch/2986148/zv61t3/', {
+    //     method: 'POST',
+    //     body: JSON.stringify(value)
+    //   })
+    //     .then((response) => response.json())
+    //     .then((responseJson) => {
+    //         console.log(responseJson)
+    //         console.log("Success")
+    //     })
+    //     .catch((error) => {
+    //       console.error(error);
+    //       console.log("Error")
+    //     });; 
+    // }
     event.preventDefault();
   }
 
@@ -190,7 +213,7 @@ class ContactFormSection extends React.Component {
       <ScrollableAnchor id={this.props.anchor}>
         <section className={[styles.gridContainer,styles.contactFormContainer].join(' ')}>
           <section className={styles.gridRow}>
-            <article className={styles.gridCol6}>
+            <article className={styles.gridCol5}>
               <h1>prenez directement contact avec nous !</h1>
               <p>Si vous avez des interrogations concernant la formation ou l’école, n’hésitez pas à prendre contact avec nous via le formulaire ou par téléphone, nous nous ferons un plaisir de répondre à vos questions. </p>
               <img className={styles.contactFormHeigLogo} src={logoHeigBlack} alt="Logo HEIG-VD" />
@@ -210,12 +233,38 @@ class ContactFormSection extends React.Component {
               </ul>
             </article>
             <article className={styles.gridCol5}>
-              <p>Merci de remplir les champs ci-dessous :</p>
+              <p>Merci de remplir les champs ci-dessous:</p>
               <form className={styles.contactForm} onSubmit={this.handleSubmit}>
-                <input type="text" value={this.state.value} onChange={this.handleChange} required placeholder="VOTRE NOM ET PRÉNOM *" />
-                <input type="text" value={this.state.value} onChange={this.handleChange} required placeholder="VOTRE EMAIL *" />
-                <input type="text" value={this.state.value} onChange={this.handleChange} required placeholder="VOTRE TÉLÉPHONE *" />
-                <textarea value={this.state.value} onChange={this.handleChange} required placeholder="VOTRE MESSAGE *" />
+                <input name="names" type="text" value={this.state.names} onChange={this.handleChange} required placeholder="VOTRE NOM ET PRÉNOM *" />
+                <input name="email" type="text" value={this.state.email} onChange={this.handleChange} required placeholder="VOTRE EMAIL *" />
+                <input name="phone" type="text" value={this.state.phone} onChange={this.handleChange} required placeholder="VOTRE TÉLÉPHONE *" />
+                <textarea name="message" value={this.state.message} onChange={this.handleChange} required placeholder="VOTRE MESSAGE *" />
+                <p>Je souhaite ...</p>
+                <label>
+                  <input
+                    name="event"
+                    type="checkbox"
+                    checked={this.state.event}
+                    onChange={this.handleChange} />
+                  ... assister à une séance d'information
+                </label>
+                <label>
+                  <input
+                    name="studentDiscuss"
+                    type="checkbox"
+                    checked={this.state.studentDiscuss}
+                    onChange={this.handleChange} />
+                  ... discuter avec un-e étudiant-e ou un-e diplômé-e
+                </label>
+                <label>
+                  <input
+                    name="meetMarcoViviani"
+                    type="checkbox"
+                    checked={this.state.meetMarcoViviani}
+                    onChange={this.handleChange} />
+                  ... rencontrer Marco Viviani
+                </label>
+
                 <input type="submit" value="Envoyer" />
               </form>
             </article>
@@ -228,7 +277,7 @@ class ContactFormSection extends React.Component {
 
 const InformationsSection = props => (
   <ScrollableAnchor id={props.anchor}>
-    <section className={[styles.gridContainer,styles.informatonsContainer].join(' ')}>
+    <section style={{backgroundImage: `url(${infoBackground})`}} className={[styles.gridContainer,styles.informatonsContainer].join(' ')}>
       <section className={styles.gridRow}>
         <article className={styles.gridCol5}>
           <h1>informations pratiques</h1>

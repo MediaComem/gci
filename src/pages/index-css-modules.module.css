@@ -293,11 +293,16 @@ body{
 	display: flex;
 	flex-direction:column;
 }
-.contactForm input, .contactForm textarea{
+.contactForm input[type="text"], .contactForm textarea{
 	padding: 12px 9px;
 	margin-bottom: 20px;
 }
-.contactForm input:first-child{
+.contactForm input[type="checkbox"]{
+	padding: 6px 3px;
+	margin-bottom: 20px;
+	margin-right: 20px;
+}
+.contactForm input[type="text"]:first-child{
 	margin-top: 20px;
 }
 .contactForm input[type="submit"]{
@@ -307,6 +312,7 @@ body{
 	text-transform: uppercase;
 	align-self: flex-start;
 	font-weight: bold;
+	margin-top: 30px;
 }
 
 .newsLetterContainer{
