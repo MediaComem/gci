@@ -33,32 +33,36 @@ export default class extends React.Component {
       <div>
         <img className={styles.heigLogo} src={logoHeig} alt="Logo HEIG-VD" />
         <Nav/>
-        <CarouselProvider
-          naturalSlideWidth={10}
-          naturalSlideHeight={16}
-          totalSlides={3}
-          style={{position:"relative"}}
-        >
-          <Slider style={{height:'100vh'}}>
-            <Slide index={0} style={{backgroundColor:'#42a155'}}><div className={styles.slidesImageContainer}><Image className={styles.slidesImageContainerImage} src={slide1} hasMasterSpinner={true}/></div></Slide>
-            <Slide index={1} style={{backgroundColor:'blue'}}>I am the second Slide.</Slide>
-            <Slide index={2} style={{backgroundColor:'green'}}>I am the third Slide.</Slide>
-          </Slider>
-          <div className={styles.slidesFixedContent}>
-            <h2>Bachelors</h2>
-            <h2>construction &amp; infrastructures</h2>
-            <p>Lorem ipsum dolor sit amet consectetur adipiscing, magnis turpis porta rhoncus sociosqu senectus. Feugiat ullamcorper egestas ent tempus magnis</p>
-            <a className={styles.downloadButton} href="#">Télécharger la brochure</a>
-            <div>
-              <Dot slide={0} className={styles.sliderDot} />
-              <Dot slide={1} className={styles.sliderDot} />
-              <Dot slide={2} className={styles.sliderDot} />
+          <CarouselProvider
+            naturalSlideWidth={100}
+            naturalSlideHeight={50}
+            totalSlides={3}
+            style={{position:"relative"}}
+          >
+            
+            <Slider>
+              <Slide index={0} style={{backgroundColor:'#42a155'}}><div className={styles.sliderContainer}><div className={styles.sliderRow}><div className={styles.slidesImageContainer}><Image className={styles.slidesImageContainerImage} src={slide1} hasMasterSpinner={true}/></div></div></div></Slide>
+              <Slide index={1} style={{backgroundColor:'blue'}}>I am the second Slide.</Slide>
+              <Slide index={2} style={{backgroundColor:'green'}}>I am the third Slide.</Slide>
+            </Slider>
+            <div className={styles.slidesFixedContent}>
+              <div className={styles.sliderContainer}><div className={styles.sliderRow}><div className={styles.gridCol5}>
+              <h2>Bachelors</h2>
+              <h2>construction &amp; infrastructures</h2>
+              <p>Lorem ipsum dolor sit amet consectetur adipiscing, magnis turpis porta rhoncus sociosqu senectus. Feugiat ullamcorper egestas ent tempus magnis</p>
+              <a className={styles.downloadButton} href="#">Télécharger la brochure</a>
+              <div>
+                <Dot slide={0} className={styles.sliderDot} />
+                <Dot slide={1} className={styles.sliderDot} />
+                <Dot slide={2} className={styles.sliderDot} />
+              </div>
+              </div></div></div>
             </div>
-          </div>
-          <a href="#formation" className={styles.goDown}>
-            <img style={{height:'50px'}} src={goDown} alt="Logo HEIG-VD" />
-          </a>
-        </CarouselProvider>
+            <a href="#formation" className={styles.goDown}>
+              <img style={{height:'50px'}} src={goDown} alt="Logo HEIG-VD" />
+            </a>
+            
+          </CarouselProvider>
         <AdvantagesSection anchor="formation"/>
         <PaletteSection anchor="section3"/>
         <InformationsSection anchor="planetudes"/>
