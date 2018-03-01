@@ -3,6 +3,7 @@ import styles from "./index-css-modules.module.css";
 import { CarouselProvider, Slider, Slide, Dot, DotGroup, Image } from 'pure-react-carousel';
 import slide1 from "../images/slide-2.png";
 import logoHeig from "../images/heig-vd.png";
+import logoHeigAlone from "../images/heig-vd-alone.png";
 import logoHesSo from "../images/hes-so.png";
 import logoHeigBlack from "../images/heig-vd-black.png";
 import facebookIcon from "../images/facebook.png";
@@ -31,8 +32,7 @@ export default class extends React.Component {
   render() {
     return (
       <div>
-        <img className={styles.heigLogo} src={logoHeig} alt="Logo HEIG-VD" />
-        <Nav/>
+        <img className={styles.heigLogo} src={logoHeigAlone} alt="Logo HEIG-VD" />
           <CarouselProvider
             naturalSlideWidth={100}
             naturalSlideHeight={50}
