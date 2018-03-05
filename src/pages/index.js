@@ -285,10 +285,15 @@ const InformationsSection = props => (
           <a className={styles.downloadButton} href="#">Plan d’études</a>
           <a className={styles.downloadButton} href="#">Admissions et autres infos</a>
         </article>
-        <article className={styles.gridCol5}>
-          <h1>Recherche & développement</h1>
-          <p>L'institut d’ingénierie du territoire (insit) de la HEIG-VD a pour objectif principal de renforcer sa position de centre de compétences en ingénierie territoriale et ce, dans sa relation avec le tissu économique local, national et international.</p>
-          <a className={styles.downloadButton} href="#">En savoir plus</a>
+        <article className={[styles.gridCol5,styles.informatonsContainerList].join(' ')}>
+          <h2>Titre</h2>
+          <p>Description</p>
+          <h2>Titre</h2>
+          <p>Description</p>
+          <h2>Titre</h2>
+          <p>Description</p>
+          <h2>Titre</h2>
+          <p>Description</p>
         </article>
       </section>
     </section>
