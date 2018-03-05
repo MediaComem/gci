@@ -1,6 +1,8 @@
 body{
 	margin: 0;
-	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-family: -apple-system, BlinkMacSystemFont,
+    "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell",
+    "Fira Sans", "Droid Sans", "Helvetica Neue",sans-serif;
 }
 .mainNav{
 	position: absolute;
@@ -47,7 +49,6 @@ body{
 }
 .mobileHeaderContainer .gridRow{
 	justify-content: flex-start;
-	padding-left: 70px;
 }
 .slidesFixedContent{
 	position:absolute;

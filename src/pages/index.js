@@ -102,10 +102,12 @@ const Nav = props => (
 const MobileHeader = props => (
   <section className={[styles.gridContainer,styles.mobileHeaderContainer].join(' ')}>
     <section className={styles.gridRow}>
+      <section style={{paddingLeft:30}}>
       <h2>Bachelors</h2>
       <h2>construction &amp; infrastructures</h2>
       <p>Lorem ipsum dolor sit amet consectetur adipiscing, magnis turpis porta rhoncus sociosqu senectus. Feugiat ullamcorper egestas ent tempus magnis</p>
       <a className={styles.downloadButton} href="#">Télécharger la brochure</a>
+      </section>
     </section>
   </section>
 );
