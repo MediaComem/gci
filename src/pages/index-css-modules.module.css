@@ -42,6 +42,13 @@ body{
 	max-width:50px;
 	margin-top:20px;
 }
+.mobileHeaderContainer{
+	background: #42a155;
+}
+.mobileHeaderContainer .gridRow{
+	justify-content: flex-start;
+	padding-left: 70px;
+}
 .slidesFixedContent{
 	position:absolute;
 	top:0;
@@ -52,13 +59,13 @@ body{
 	justify-content:right;
 	flex-direction:column;
 }
-.slidesFixedContent h2{
+.slidesFixedContent h2, .mobileHeaderContainer h2{
 	text-transform: uppercase;
 	margin-bottom: 0;
 	margin-top: 0;
 	letter-spacing: 2px;
 }
-.slidesFixedContent h2:nth-child(2),.slidesFixedContent p{
+.slidesFixedContent h2:nth-child(2),.slidesFixedContent p,.mobileHeaderContainer h2:nth-child(2), .mobileHeaderContainer p{
 	color:#fff;
 }
 .slidesFixedContent .sliderContainer{
@@ -175,8 +182,9 @@ body{
 	.gridRow{
 		flex-wrap: wrap;
 	}
-	.gridCol3,.gridCol4,.gridCol5,.gridCol7{
+	.gridCol3,.gridCol4,.gridCol5,.gridCol7,.gridCol33{
 		flex-basis: 100%;
+		margin-top: 20px;
 	}
 }
 .gridRow article{
@@ -248,7 +256,15 @@ body{
 	margin-bottom: 50px;
 	text-transform: uppercase;
 }
+@media (min-width: 800px){
+	.mobileHeaderContainer{
+		display: none;
+	}
+}
 @media (max-width: 800px){
+	.carousel{
+		display: none;
+	}
 	.itemContainer p{
 		margin-top: 8px;
 		font-size: 0.9em;

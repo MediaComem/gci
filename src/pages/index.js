@@ -36,36 +36,42 @@ export default class extends React.Component {
     return (
       <div>
         <img className={styles.heigLogo} src={logoHeigAlone} alt="Logo HEIG-VD" />
-          <CarouselProvider
-            naturalSlideWidth={100}
-            naturalSlideHeight={45}
-            totalSlides={3}
-            style={{position:"relative"}}
-          >
-            
-            <Slider>
-              <Slide index={0} style={{backgroundColor:'#42a155'}}><div className={styles.sliderContainer}><div className={styles.sliderRow}><div className={styles.slidesImageContainer}><Image className={styles.slidesImageContainerImage} src={slide1} hasMasterSpinner={true}/></div></div></div></Slide>
-              <Slide index={1} style={{backgroundColor:'#ffc10e'}}></Slide>
-              <Slide index={2} style={{backgroundColor:'#00aed6'}}></Slide>
-            </Slider>
-            <div className={styles.slidesFixedContent}>
-              <div className={styles.sliderContainer}><div className={styles.sliderRow}><div className={styles.gridCol5}>
-              <h2>Bachelors</h2>
-              <h2>construction &amp; infrastructures</h2>
-              <p>Lorem ipsum dolor sit amet consectetur adipiscing, magnis turpis porta rhoncus sociosqu senectus. Feugiat ullamcorper egestas ent tempus magnis</p>
-              <a className={styles.downloadButton} href="#">Télécharger la brochure</a>
-              <div>
-                <Dot slide={0} className={styles.sliderDot} />
-                <Dot slide={1} className={styles.sliderDot} />
-                <Dot slide={2} className={styles.sliderDot} />
+        <CarouselProvider
+          naturalSlideWidth={100}
+          naturalSlideHeight={45}
+          totalSlides={3}
+          style={{position:"relative"}}
+          className={styles.carousel}
+        >
+          
+          <Slider>
+            <Slide index={0} style={{backgroundColor:'#42a155'}}><div className={styles.sliderContainer}><div className={styles.sliderRow}><div className={styles.slidesImageContainer}><Image className={styles.slidesImageContainerImage} src={slide1} hasMasterSpinner={true}/></div></div></div></Slide>
+            <Slide index={1} style={{backgroundColor:'#ffc10e'}}></Slide>
+            <Slide index={2} style={{backgroundColor:'#00aed6'}}></Slide>
+          </Slider>
+          <div className={styles.slidesFixedContent}>
+            <div className={styles.sliderContainer}>
+              <div className={styles.sliderRow}>
+                <div className={styles.gridCol5}>
+                  <h2>Bachelors</h2>
+                  <h2>construction &amp; infrastructures</h2>
+                  <p>Lorem ipsum dolor sit amet consectetur adipiscing, magnis turpis porta rhoncus sociosqu senectus. Feugiat ullamcorper egestas ent tempus magnis</p>
+                  <a className={styles.downloadButton} href="#">Télécharger la brochure</a>
+                  <div>
+                    <Dot slide={0} className={styles.sliderDot} />
+                    <Dot slide={1} className={styles.sliderDot} />
+                    <Dot slide={2} className={styles.sliderDot} />
+                  </div>
+                </div>
               </div>
-              </div></div></div>
             </div>
-            <a href="#formation" className={styles.goDown}>
-              <img style={{height:'50px'}} src={goDown} alt="Logo HEIG-VD" />
-            </a>
-            
-          </CarouselProvider>
+          </div>
+          <a href="#formation" className={styles.goDown}>
+            <img style={{height:'50px'}} src={goDown} alt="Logo HEIG-VD" />
+          </a>
+          
+        </CarouselProvider>
+        <MobileHeader/>
         <AdvantagesSection anchor="formation"/>
         <PaletteSection anchor="section3"/>
         <InformationsSection anchor="planetudes"/>
@@ -91,6 +97,17 @@ const Nav = props => (
       <li><a href="#"><img src={youtubeIconWhite} alt="youtube" /></a></li>
     </ul>
   </nav>
+);
+
+const MobileHeader = props => (
+  <section className={[styles.gridContainer,styles.mobileHeaderContainer].join(' ')}>
+    <section className={styles.gridRow}>
+      <h2>Bachelors</h2>
+      <h2>construction &amp; infrastructures</h2>
+      <p>Lorem ipsum dolor sit amet consectetur adipiscing, magnis turpis porta rhoncus sociosqu senectus. Feugiat ullamcorper egestas ent tempus magnis</p>
+      <a className={styles.downloadButton} href="#">Télécharger la brochure</a>
+    </section>
+  </section>
 );
 
 
