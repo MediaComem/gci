@@ -36,15 +36,15 @@ export default class extends React.Component {
         <img className={styles.heigLogo} src={logoHeigAlone} alt="Logo HEIG-VD" />
           <CarouselProvider
             naturalSlideWidth={100}
-            naturalSlideHeight={50}
+            naturalSlideHeight={45}
             totalSlides={3}
             style={{position:"relative"}}
           >
             
             <Slider>
               <Slide index={0} style={{backgroundColor:'#42a155'}}><div className={styles.sliderContainer}><div className={styles.sliderRow}><div className={styles.slidesImageContainer}><Image className={styles.slidesImageContainerImage} src={slide1} hasMasterSpinner={true}/></div></div></div></Slide>
-              <Slide index={1} style={{backgroundColor:'blue'}}>I am the second Slide.</Slide>
-              <Slide index={2} style={{backgroundColor:'green'}}>I am the third Slide.</Slide>
+              <Slide index={1} style={{backgroundColor:'#ffc10e'}}></Slide>
+              <Slide index={2} style={{backgroundColor:'#00aed6'}}></Slide>
             </Slider>
             <div className={styles.slidesFixedContent}>
               <div className={styles.sliderContainer}><div className={styles.sliderRow}><div className={styles.gridCol5}>
