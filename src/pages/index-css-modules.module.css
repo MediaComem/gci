@@ -263,6 +263,9 @@ body{
 	}
 }
 @media (max-width: 800px){
+	p{
+		margin-bottom: 15px !important;
+	}
 	.carousel{
 		display: none;
 	}
@@ -280,6 +283,10 @@ body{
 	}
 	.paletteDownloadButton{
 		margin-top: 20px;
+	}
+	.informatonsContainer, .downloadButton{
+		display: inline-block;
+		margin-bottom:0; 
 	}
 }
 .informatonsContainer{

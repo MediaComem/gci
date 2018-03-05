@@ -287,31 +287,36 @@ class ContactFormSection extends React.Component {
                 <input name="phone" type="text" value={this.state.phone} onChange={this.handleChange} required placeholder="VOTRE TÉLÉPHONE *" />
                 <textarea name="message" value={this.state.message} onChange={this.handleChange} required placeholder="VOTRE MESSAGE *" />
                 <p>Je souhaite ...</p>
-                <label>
+                <div style={{display:'flex',flexDirection:'row', justifyContent: 'flex-start', alignItems: 'flex-start'}}>
                   <input
                     name="event"
                     type="checkbox"
                     checked={this.state.event}
                     onChange={this.handleChange} />
-                  ... assister à une séance d'information
-                </label>
-                <label>
+                    <label>
+                      ... assister à une séance d'information
+                    </label>
+                </div>
+                <div style={{display:'flex',flexDirection:'row', justifyContent: 'flex-start', alignItems: 'flex-start', marginTop:'20px'}}>
                   <input
                     name="studentDiscuss"
                     type="checkbox"
                     checked={this.state.studentDiscuss}
                     onChange={this.handleChange} />
-                  ... discuter avec un-e étudiant-e ou un-e diplômé-e
-                </label>
-                <label>
+                  <label>
+                    ... discuter avec un-e étudiant-e ou un-e diplômé-e
+                  </label>
+                </div>
+                <div style={{display:'flex',flexDirection:'row', justifyContent: 'flex-start', alignItems: 'flex-start', marginTop:'20px'}}>
                   <input
                     name="meetMarcoViviani"
                     type="checkbox"
                     checked={this.state.meetMarcoViviani}
                     onChange={this.handleChange} />
-                  ... rencontrer Marco Viviani
-                </label>
-
+                  <label>
+                    ... rencontrer Marco Viviani
+                  </label>
+                </div>
                 <input type="submit" value="Envoyer" />
               </form>
             </article>
