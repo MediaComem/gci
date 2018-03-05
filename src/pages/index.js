@@ -11,6 +11,7 @@ import facebookIconWhite from "../images/facebook-white.png";
 import youtubeIcon from "../images/youtube.png";
 import youtubeIconWhite from "../images/youtube-white.png";
 import goDown from "../images/go-down.png";
+import profilePic from "../images/profile.jpg";
 import infoBackground from "../images/info-background.jpg";
 import skill1 from "../images/GCI-pictos-competences-01.png";
 import skill2 from "../images/GCI-pictos-competences-02.png";
@@ -217,20 +218,38 @@ class ContactFormSection extends React.Component {
               <h1>prenez directement contact avec nous !</h1>
               <p>Si vous avez des interrogations concernant la formation ou l’école, n’hésitez pas à prendre contact avec nous via le formulaire ou par téléphone, nous nous ferons un plaisir de répondre à vos questions. </p>
               <img className={styles.contactFormHeigLogo} src={logoHeigBlack} alt="Logo HEIG-VD" />
-              <ul className={styles.contactList}>
-                <li>
-                  Campus de Cheseaux
-                </li>
-                <li style={{marginTop:'10px'}}>
-                  Route de Cheseaux 1
-                </li>
-                <li>
-                  1401 Yverdon-les-Bains
-                </li>
-                <li style={{marginTop:'10px'}}>
-                  +41 (0)24 557 63 30
-                </li>
-              </ul>
+              <section className={styles.gridRow}>
+                <article className={styles.gridCol3}>
+                  <img style={{maxHeight:'180px'}} src={profilePic} alt="Marco Viviani" />
+                </article>
+                <article className={styles.gridCol7} style={{alignContent:'flex-start'}}>
+                  <ul className={styles.contactList}>
+                    <li>
+                      Route de Cheseaux 1
+                    </li>
+                    <li>
+                      1401 Yverdon-les-Bains
+                    </li>
+                    <li>
+                      +41 (0)24 557 63 30
+                    </li>
+                  </ul>
+                  <ul className={styles.contactList}>
+                    <li style={{textTransform:'uppercase','fontWeight': 'bold',marginBottom:'8px'}}>
+                      Personne de contact:
+                    </li>
+                    <li>
+                      Prof. Marco Viviani
+                    </li>
+                    <li>
+                      Dr. en Génie Civil
+                    </li>
+                    <li>
+                      Responsable d'orientatin CGI
+                    </li>
+                  </ul>
+                </article>
+              </section>
             </article>
             <article className={styles.gridCol5}>
               <p>Merci de remplir les champs ci-dessous:</p>

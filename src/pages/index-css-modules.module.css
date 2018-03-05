@@ -297,6 +297,8 @@ body{
 }
 .contactList{
 	list-style-type: none;
+	margin-top: 0;
+	padding-left: 0;
 }
 .contactForm{
 	display: flex;
