@@ -13,6 +13,7 @@ import youtubeIconWhite from "../images/youtube-white.png";
 import goDown from "../images/go-down.png";
 import profilePic from "../images/profile.jpg";
 import infoBackground from "../images/info-background.jpg";
+import mapMarker from "../images/map-marker.png";
 import skill1 from "../images/GCI-pictos-competences-01.png";
 import skill2 from "../images/GCI-pictos-competences-02.png";
 import skill3 from "../images/GCI-pictos-competences-03.png";
@@ -129,21 +130,28 @@ class NewsLetterSection extends React.Component {
     return (
         <section className={[styles.gridContainer,styles.newsLetterContainer].join(' ')}>
         <section className={styles.gridRow}>
-          <article className={styles.gridCol5}>
+          <article className={styles.gridCol33}>
             <h1>Inscription à la newsletter</h1>
             <p>Pour recevoir les dernières informations relatives à la formation et à l’école, ainsi que les dates des événements :</p>
-            <form className={styles.newsLetterForm} onSubmit={this.handleSubmit}>
-              <input type="text" value={this.state.value} onChange={this.handleChange} required placeholder="VOTRE EMAIL *" />
-              <input type="submit" value="Envoyer" />
-            </form>
+            <a className={styles.paletteDownloadButton} href="#">Plan d’études</a>
           </article>
-          <article className={styles.gridCol5}>
+          <article className={styles.gridCol33}>
+            <h1>Inscription à la newsletter</h1>
+            <p>Pour recevoir les dernières informations relatives à la formation et à l’école, ainsi que les dates des événements :</p>
+            <a className={styles.paletteDownloadButton} href="#">Plan d’études</a>
+          </article>
+          <article className={styles.gridCol33}>
             <h1>nous suivre</h1>
             <p>Gardez le contact avec nous !</p>
             <div className={styles.socialIcons}>
               <img src={facebookIcon} alt="facebook" />
               <img src={youtubeIcon} alt="youtube" />
             </div>
+          </article>
+          <article className={styles.gridCol33}>
+            <h1>Inscription à la newsletter</h1>
+            <p>Pour recevoir les dernières informations relatives à la formation et à l’école, ainsi que les dates des événements :</p>
+            <a className={styles.paletteDownloadButton} href="#">Plan d’études</a>
           </article>
         </section>
         </section>
@@ -164,6 +172,7 @@ class SimpleMap extends React.Component {
         defaultCenter={this.props.center}
         defaultZoom={this.props.zoom}
       >
+        <img src={mapMarker} lat={46.7802437} lng={6.6582137} />
       </GoogleMapReact>
     );
   }

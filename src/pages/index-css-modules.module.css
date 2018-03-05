@@ -159,6 +159,9 @@ body{
 .gridCol3{
 	flex-basis: 30%;
 }
+.gridCol33{
+	flex-basis: 33.33%;
+}
 .gridCol4{
 	flex-basis: 40%;
 }
