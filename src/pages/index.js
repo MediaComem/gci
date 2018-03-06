@@ -25,9 +25,11 @@ import skill8 from "../images/GCI-pictos-competences-08.png";
 import skill9 from "../images/GCI-pictos-competences-09.png";
 import skill10 from "../images/GCI-pictos-competences-10.png";
 import skill11 from "../images/GCI-pictos-competences-11.png";
+import myfont from "../fonts/320DD7_0_0.woff2";
 import 'pure-react-carousel/dist/react-carousel.es.css';
 import GoogleMapReact from 'google-map-react';
 import ScrollableAnchor from 'react-scrollable-anchor'
+import YouTube from 'react-youtube';
 
 
 export default class extends React.Component {
@@ -56,7 +58,7 @@ export default class extends React.Component {
                   <h2>Bachelors</h2>
                   <h2>construction &amp; infrastructures</h2>
                   <p>Lorem ipsum dolor sit amet consectetur adipiscing, magnis turpis porta rhoncus sociosqu senectus. Feugiat ullamcorper egestas ent tempus magnis</p>
-                  <a className={styles.downloadButton} href="#">Télécharger la brochure</a>
+                  <a className={styles.downloadButton} href="#contact">Télécharger la brochure</a>
                   <div>
                     <Dot slide={0} className={styles.sliderDot} />
                     <Dot slide={1} className={styles.sliderDot} />
@@ -178,6 +180,16 @@ class NewsLetterSection extends React.Component {
   }
 }
 
+class SimpleMapMarker extends React.Component {
+  render() {
+    return (
+      <div>
+        <img src={mapMarker} />
+      </div>
+    );
+  }
+}
+
 class SimpleMap extends React.Component {
   static defaultProps = {
     center: {lat: 46.7792276, lng: 6.6571928},
@@ -191,7 +203,7 @@ class SimpleMap extends React.Component {
         defaultCenter={this.props.center}
         defaultZoom={this.props.zoom}
       >
-        <img src={mapMarker} lat={46.7802437} lng={6.6582137} />
+        <SimpleMapMarker lat={46.7802437} lng={6.6582137} />
       </GoogleMapReact>
     );
   }
@@ -200,7 +212,7 @@ class SimpleMap extends React.Component {
 class ContactFormSection extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {names: '',email: '',phone:'', 'message':'',event:false, studentDiscuss:false, meetMarcoViviani:false};
+    this.state = {names: '',email: '',phone:'', 'message':'',event:true, studentDiscuss:false, meetMarcoViviani:false};
 
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -282,10 +294,9 @@ class ContactFormSection extends React.Component {
             <article className={styles.gridCol5}>
               <p>Merci de remplir les champs ci-dessous:</p>
               <form className={styles.contactForm} onSubmit={this.handleSubmit}>
-                <input name="names" type="text" value={this.state.names} onChange={this.handleChange} required placeholder="VOTRE NOM ET PRÉNOM *" />
-                <input name="email" type="text" value={this.state.email} onChange={this.handleChange} required placeholder="VOTRE EMAIL *" />
-                <input name="phone" type="text" value={this.state.phone} onChange={this.handleChange} required placeholder="VOTRE TÉLÉPHONE *" />
-                <textarea name="message" value={this.state.message} onChange={this.handleChange} required placeholder="VOTRE MESSAGE *" />
+                <input name="names" type="text" value={this.state.names} onChange={this.handleChange} required placeholder="NOM ET PRÉNOM *" />
+                <input name="email" type="text" value={this.state.email} onChange={this.handleChange} required placeholder="EMAIL *" />
+                <textarea name="message" value={this.state.message} onChange={this.handleChange} placeholder="MESSAGE" />
                 <p>Je souhaite ...</p>
                 <div style={{display:'flex',flexDirection:'row', justifyContent: 'flex-start', alignItems: 'flex-start'}}>
                   <input
@@ -368,9 +379,9 @@ const AdvantagesSection = props => (
             totalSlides={3}
           >
             <Slider>
-              <Slide index={0}><div className={styles.videoContainer}><iframe src="https://www.youtube.com/embed/Y_hN-sp5bz4" allowFullScreen></iframe></div></Slide>
-              <Slide index={1}><div className={styles.videoContainer}><iframe src="https://www.youtube.com/embed/AL7rPIuvLBY" allowFullScreen></iframe></div></Slide>
-              <Slide index={2}><div className={styles.videoContainer}><iframe src="https://www.youtube.com/embed/jcrkrAh1nOc" allowFullScreen></iframe></div></Slide>
+              <Slide index={0}><div className={styles.videoContainer}><YouTube videoId="Y_hN-sp5bz4" /></div></Slide>
+              <Slide index={1}><div className={styles.videoContainer}><YouTube videoId="AL7rPIuvLBY" /></div></Slide>
+              <Slide index={2}><div className={styles.videoContainer}><YouTube videoId="jcrkrAh1nOc" /></div></Slide>
             </Slider>
             <div className={styles.advantagesSectionSliderDotsContainer}>
               <Dot slide={0} className={styles.advantagesSectionSliderDots} />
@@ -387,10 +398,10 @@ const AdvantagesSection = props => (
 const PaletteSection = props => (
   <section className={[styles.gridContainer,styles.paletteContainer].join(' ')} id={props.anchor}>
     <section className={styles.gridRow}>
-      <article className={[styles.paletteSectionContentLeft,styles.gridCol3].join(' ')}>
+      <article className={[styles.paletteSectionContentLeft,styles.gridCol4].join(' ')}>
         <h1>la palette complète des compétences de la formation</h1>
       </article>
-      <article className={styles.gridCol7}>
+      <article className={styles.gridCol6}>
         <p>Nos ingénieur-e-s en construction sont très apprécié-e-s par le marché du travail, par leurs compétences techniques et pratiques pointues, qui répondent aux exigences techniques du métier, et leurs compétences sociales qui leur permette d'œuvrer au sein d'équipes variées et interdisciplinaires.</p>
       </article>
     </section>

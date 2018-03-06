@@ -1,8 +1,14 @@
+@font-face {
+    font-family: DINNextLTPro-Medium;
+    src: url(../fonts/320DD7_0_0.woff2);
+}
 body{
 	margin: 0;
-	font-family: -apple-system, BlinkMacSystemFont,
-    "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell",
-    "Fira Sans", "Droid Sans", "Helvetica Neue",sans-serif;
+	font-family: DINNextLTPro-Medium,sans-serif;
+}
+h1{
+	font-size: 1.8em;
+	margin-top: 16px;
 }
 .mainNav{
 	position: absolute;
@@ -176,6 +182,9 @@ body{
 .gridCol5{
 	flex-basis: 50%;
 }
+.gridCol6{
+	flex-basis: 60%;
+}
 .gridCol7{
 	flex-basis: 70%;
 }
@@ -183,7 +192,7 @@ body{
 	.gridRow{
 		flex-wrap: wrap;
 	}
-	.gridCol3,.gridCol4,.gridCol5,.gridCol7,.gridCol33{
+	.gridCol3,.gridCol4,.gridCol5,.gridCol6,.gridCol7,.gridCol33{
 		flex-basis: 100%;
 		margin-top: 20px;
 	}
@@ -239,12 +248,12 @@ body{
 }
 .itemContainer img{
 	align-self: flex-start;
-	max-width: 50px;
+	max-width: 75px;
 }
 .itemContainer p{
 	padding-left: 8px;
 	margin-top: 4px;
-	font-size: 0.7em;
+	font-size: 1em;
 }
 .paletteDownloadButton{
 	text-decoration: none;
@@ -307,6 +316,7 @@ body{
 .informatonsContainerList h2{
 	font-size: 0.9em;
 	margin-bottom: 4px;
+	margin-top: 16px;
 }
 .informatonsContainerList p{
 	font-size: 0.9em;
