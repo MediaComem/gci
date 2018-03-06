@@ -272,6 +272,9 @@ h1{
 	}
 }
 @media (max-width: 800px){
+	.heigLogo{
+		max-width:20px;
+	}
 	p{
 		margin-bottom: 15px !important;
 	}
