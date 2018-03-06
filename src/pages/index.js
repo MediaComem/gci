@@ -1,7 +1,9 @@
 import React from 'react';
 import styles from "./index-css-modules.module.css";
 import { CarouselProvider, Slider, Slide, Dot, DotGroup, Image } from 'pure-react-carousel';
-import slide1 from "../images/slide-2.png";
+import slide1 from "../images/GCI-images-hexagones_Vert.png";
+import slide2 from '../images/GCI-images-hexagones-Jaune.png'
+import slide3 from '../images/GCI-images-hexagones-Bleu.png'
 import logoHeig from "../images/heig-vd.png";
 import logoHeigAlone from "../images/heig-vd-alone.png";
 import logoHesSo from "../images/hes-so.png";
@@ -48,8 +50,8 @@ export default class extends React.Component {
           
           <Slider>
             <Slide index={0} style={{backgroundColor:'#42a155'}}><div className={styles.sliderContainer}><div className={styles.sliderRow}><div className={styles.slidesImageContainer}><Image className={styles.slidesImageContainerImage} src={slide1} hasMasterSpinner={true}/></div></div></div></Slide>
-            <Slide index={1} style={{backgroundColor:'#ffc10e'}}></Slide>
-            <Slide index={2} style={{backgroundColor:'#00aed6'}}></Slide>
+            <Slide index={1} style={{backgroundColor:'#ffc10e'}}><div className={styles.sliderContainer}><div className={styles.sliderRow}><div className={styles.slidesImageContainer}><Image className={styles.slidesImageContainerImage} src={slide2} hasMasterSpinner={true}/></div></div></div></Slide>
+            <Slide index={2} style={{backgroundColor:'#00aed6'}}><div className={styles.sliderContainer}><div className={styles.sliderRow}><div className={styles.slidesImageContainer}><Image className={styles.slidesImageContainerImage} src={slide3} hasMasterSpinner={true}/></div></div></div></Slide>
           </Slider>
           <div className={styles.slidesFixedContent}>
             <div className={styles.sliderContainer}>
