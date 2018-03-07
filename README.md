@@ -8,3 +8,7 @@ gatsby new gatsby-site https://github.com/gatsbyjs/gatsby-starter-hello-world
 
 ## Running in development
 `gatsby develop`
+
+## Build
+`npm run build`
+The site is then built into public folder
