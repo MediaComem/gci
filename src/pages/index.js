@@ -156,12 +156,12 @@ class NewsLetterSection extends React.Component {
           <article className={styles.gridCol33}>
             <h1>Inscription à la newsletter</h1>
             <p>Pour recevoir les dernières informations relatives à la formation et à l’école, ainsi que les dates des événements :</p>
-            <a className={styles.paletteDownloadButton} href="#">Plan d’études</a>
+            <a className={styles.paletteDownloadButton} href="https://heig-vd.ch/formations/bachelor/admission/inscriptions">Plan d’études</a>
           </article>
           <article className={styles.gridCol33}>
             <h1>Inscription à la newsletter</h1>
             <p>Pour recevoir les dernières informations relatives à la formation et à l’école, ainsi que les dates des événements :</p>
-            <a className={styles.paletteDownloadButton} href="#">Plan d’études</a>
+            <a className={styles.paletteDownloadButton} href="https://heig-vd.ch/formations/bachelor/admission/inscriptions">Plan d’études</a>
           </article>
           <article className={styles.gridCol33}>
             <h1>nous suivre</h1>
@@ -174,7 +174,7 @@ class NewsLetterSection extends React.Component {
           <article className={styles.gridCol33}>
             <h1>Inscription à la newsletter</h1>
             <p>Pour recevoir les dernières informations relatives à la formation et à l’école, ainsi que les dates des événements :</p>
-            <a className={styles.paletteDownloadButton} href="#">Plan d’études</a>
+            <a className={styles.paletteDownloadButton} href="https://heig-vd.ch/formations/bachelor/admission/conditions-admission">Plan d’études</a>
           </article>
         </section>
         </section>
