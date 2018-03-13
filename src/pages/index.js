@@ -57,10 +57,10 @@ export default class extends React.Component {
             <div className={styles.sliderContainer}>
               <div className={styles.sliderRow}>
                 <div className={styles.gridCol5}>
-                  <h2>Bachelors</h2>
+                  <h2>Orientation</h2>
                   <h2>construction &amp; infrastructures</h2>
-                  <p>Lorem ipsum dolor sit amet consectetur adipiscing, magnis turpis porta rhoncus sociosqu senectus. Feugiat ullamcorper egestas ent tempus magnis</p>
-                  <a className={styles.downloadButton} href="#contact">Télécharger la brochure</a>
+                  <p>Cette orientation de la filière Géomatique de la HEIG-VD vous permettras d’acquérir les connaissances et les compétences qui vous seront nécaissaires afin de travailler dans les domaines de la construction et de l’ingénierie civile.</p>
+                  <a className={styles.downloadButton} href="#contact">Séance d’information</a>
                   <div>
                     <Dot slide={0} className={styles.sliderDot} />
                     <Dot slide={1} className={styles.sliderDot} />
@@ -107,10 +107,10 @@ const MobileHeader = props => (
   <section className={[styles.gridContainer,styles.mobileHeaderContainer].join(' ')}>
     <section className={styles.gridRow}>
       <section style={{paddingLeft:30,paddingTop:15}}>
-      <h2>Bachelors</h2>
+      <h2>Orientation</h2>
       <h2>construction &amp; infrastructures</h2>
-      <p>Lorem ipsum dolor sit amet consectetur adipiscing, magnis turpis porta rhoncus sociosqu senectus. Feugiat ullamcorper egestas ent tempus magnis</p>
-      <a className={styles.downloadButton} href="#">Télécharger la brochure</a>
+      <p>Cette orientation de la filière Géomatique de la HEIG-VD vous permettras d’acquérir les connaissances et les compétences qui vous seront nécaissaires afin de travailler dans les domaines de la construction et de l’ingénierie civile.</p>
+      <a className={styles.downloadButton} href="#">Séance d’information</a>
       </section>
     </section>
   </section>
@@ -154,27 +154,26 @@ class NewsLetterSection extends React.Component {
         <section className={[styles.gridContainer,styles.newsLetterContainer].join(' ')}>
         <section className={styles.gridRow}>
           <article className={styles.gridCol33}>
-            <h1>Inscription à la newsletter</h1>
-            <p>Pour recevoir les dernières informations relatives à la formation et à l’école, ainsi que les dates des événements :</p>
-            <a className={styles.paletteDownloadButton} href="https://heig-vd.ch/formations/bachelor/admission/inscriptions">Plan d’études</a>
+            <h1>Recherche & développement</h1>
+            <p>L’institut d’ingénierie du territoire (insit) de la HEIG-VD a pour objectif principal de renforcer sa position de centre de compétences en ingénierie territoriale et ce, dans sa relation avec le tissu économique local, national et international.</p>
+            <a className={styles.paletteDownloadButton} href="https://heig-vd.ch/rad/instituts/insit">En savoir plus</a>
           </article>
           <article className={styles.gridCol33}>
-            <h1>Inscription à la newsletter</h1>
-            <p>Pour recevoir les dernières informations relatives à la formation et à l’école, ainsi que les dates des événements :</p>
-            <a className={styles.paletteDownloadButton} href="https://heig-vd.ch/formations/bachelor/admission/inscriptions">Plan d’études</a>
+            <h1>Un master pour la suite?</h1>
+            <p>Le Master of Science HES-SO en Ingénierie de territoire (MIT) vise la formation d’ingénieur-e-s capables d’œuvrer comme cadres supérieurs dans les entreprises privées et les administrations publiques actives dans les domaines de génie Civil, de la géomatique et de l’urbanisme opérationnel.</p>
+            <a className={styles.paletteDownloadButton} href="https://heig-vd.ch/formations/master/filieres/ingenierie-du-territoire">Renseignements</a>
           </article>
           <article className={styles.gridCol33}>
             <h1>nous suivre</h1>
-            <p>Gardez le contact avec nous !</p>
+            <p>Restez en contact avec nous sur nos canaux sociaux!</p>
             <div className={styles.socialIcons}>
               <img src={facebookIcon} alt="facebook" />
               <img src={youtubeIcon} alt="youtube" />
             </div>
           </article>
           <article className={styles.gridCol33}>
-            <h1>Inscription à la newsletter</h1>
-            <p>Pour recevoir les dernières informations relatives à la formation et à l’école, ainsi que les dates des événements :</p>
-            <a className={styles.paletteDownloadButton} href="https://heig-vd.ch/formations/bachelor/admission/conditions-admission">Plan d’études</a>
+            <h1>Lorem ipsum</h1>
+            <p>Lorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsum</p>
           </article>
         </section>
         </section>
@@ -257,7 +256,7 @@ class ContactFormSection extends React.Component {
         <section className={[styles.gridContainer,styles.contactFormContainer].join(' ')}>
           <section className={styles.gridRow}>
             <article className={styles.gridCol5}>
-              <h1>prenez directement contact avec nous !</h1>
+              <h1>nous sommes là pour vous!</h1>
               <p>Si vous avez des interrogations concernant la formation ou l’école, n’hésitez pas à prendre contact avec nous via le formulaire ou par téléphone, nous nous ferons un plaisir de répondre à vos questions. </p>
               <img className={styles.contactFormHeigLogo} src={logoHeigBlack} alt="Logo HEIG-VD" />
               <section className={styles.gridRow}>
@@ -284,10 +283,13 @@ class ContactFormSection extends React.Component {
                       Prof. Marco Viviani
                     </li>
                     <li>
-                      Dr. en Génie Civil
+                      Dr. en Sciences Techniques, Ingénieur civil
                     </li>
                     <li>
-                      Responsable d'orientatin CGI
+                      Responsable de l’orientation 
+                    </li>
+                    <li>
+                      GCI - constructions en infrastructures
                     </li>
                   </ul>
                 </article>
@@ -345,20 +347,23 @@ const InformationsSection = props => (
     <section style={{backgroundImage: `url(${infoBackground})`}} className={[styles.gridContainer,styles.informatonsContainer].join(' ')}>
       <section className={styles.gridRow}>
         <article className={styles.gridCol5}>
-          <h1>informations pratiques</h1>
-          <p>De nombreux défis, réservés à l'esprit inventif et créatif, que nos diplômé-e-s se feront le plaisir de relever. Découvrez la variété du plan d’études ainsi que les condissions d’admission et autres informations relatives à la formation proposée, ci-dessous:</p>
-          <a className={styles.downloadButton} href="#">Plan d’études</a>
-          <a className={styles.downloadButton} href="#">Admissions et autres infos</a>
+          <h1>Construisez votre avenir</h1>
+          <p>De nombreux défis, réservés à l'esprit inventif et créatif, que nos diplômé-e-s se feront le plaisir de relever.</p>
+          <p>Découvrez la variété du plan d’études (à télécharger ci-dessus) ainsi que les conditions d’admission, prenez connaissances des pré-requis et autres informations relatives à la formation.</p>
+          <a className={styles.downloadButton} href="https://heig-vd.ch/formations/bachelor/admission/conditions-admission">Conditions d’admission</a>
+          <a className={styles.downloadButton} href="https://heig-vd.ch/formations/bachelor/admission/inscriptions">Inscription</a>
         </article>
         <article className={[styles.gridCol5,styles.informatonsContainerList].join(' ')}>
-          <h2>Titre</h2>
-          <p>Description</p>
-          <h2>Titre</h2>
-          <p>Description</p>
-          <h2>Titre</h2>
-          <p>Description</p>
-          <h2>Titre</h2>
-          <p>Description</p>
+          <h2>Titre obtenu</h2>
+          <p>Bachelor of Science HES-SO en Géomatique, Orientation Construction et Infrastructures</p>
+          <h2>Lieu</h2>
+          <p>Haute école d’Ingénierie et de Gestion du Canton de Vaud, Yverdon-les-Bains</p>
+          <h2>Durée</h2>
+          <p>3 ans à plein temps ou 4 ans en emploi / à temps partiel</p>
+          <h2>Délais d’inscription</h2>
+          <p>31 mai 2018</p>
+          <h2>Frais d'écolage</h2>
+          <p>CHF 1’200.- / année</p>
         </article>
       </section>
     </section>
@@ -370,9 +375,9 @@ const AdvantagesSection = props => (
     <section className={styles.gridContainer}>
       <section className={styles.gridRow}>
         <article className={[styles.advantagesSectionContentLeft,styles.gridCol5].join(' ')}>
-          <h1>Les avantages de choisir cette formation plutôt qu’une autre</h1>
+          <h1>Pourquoi choisir notre formation?</h1>
           <p>Devenir ingénieur-e dans les domaines de l'ingénierie civile, c'est devenir un acteur majeur dans la création, l'entretien et le développement de l'espace construit et de ses infrastructures dans le respect du développement économique durable.</p>
-          <p>Notre orientation en construction et infrastructure répond aux exigences pluridisciplinaires liées à la conception, réalisation, rénovation et maintenance de nos infrastructures et de notre patrimoine immobilier</p>
+          <p>Notre orientation en construction et infrastructures répond aux exigences pluridisciplinaires liées à la conception, réalisation, rénovation et maintenance de nos infrastructures et de notre patrimoine immobilier.</p>
         </article>
         <article className={[styles.advantagesSectionContentRight,styles.gridCol5].join(' ')}>
           <CarouselProvider
@@ -401,10 +406,10 @@ const PaletteSection = props => (
   <section className={[styles.gridContainer,styles.paletteContainer].join(' ')} id={props.anchor}>
     <section className={styles.gridRow}>
       <article className={[styles.paletteSectionContentLeft,styles.gridCol4].join(' ')}>
-        <h1>la palette complète des compétences de la formation</h1>
+        <h1>La palette complète des compétences de la formation</h1>
       </article>
       <article className={styles.gridCol6}>
-        <p>Nos ingénieur-e-s en construction sont très apprécié-e-s par le marché du travail, par leurs compétences techniques et pratiques pointues, qui répondent aux exigences techniques du métier, et leurs compétences sociales qui leur permette d'œuvrer au sein d'équipes variées et interdisciplinaires.</p>
+        <p>Nos ingénieur-e-s en construction sont très apprécié-e-s par le marché du travail, par leurs compétences techniques et pratiques pointues, qui répondent aux exigences techniques du métier, et leurs compétences sociales qui leur permettent d'œuvrer au sein d'équipes variées et interdisciplinaires.</p>
       </article>
     </section>
     <section className={[styles.gridRow,styles.paletteGroup].join(' ')}>
@@ -482,7 +487,7 @@ const PaletteSection = props => (
       </article>
       <article className={styles.gridCol4}>
         <div className={styles.itemContainer}>
-          <a className={styles.paletteDownloadButton} href="#">Télécharger la brochure</a>
+          <a className={styles.paletteDownloadButton} href="#">Le plan d’études</a>
         </div>
       </article>
     </section>
