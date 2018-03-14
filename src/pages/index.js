@@ -99,7 +99,7 @@ const Nav = props => (
       <li><a href="#planetudes">Plan d'études</a></li>
       <li><a className={styles.mainNavContact} href="#contact">Nous contacter</a></li>
       <li><a href="#"><img src={facebookIconWhite} alt="facebook" /></a></li>
-      <li><a href="#"><img src={youtubeIconWhite} alt="youtube" /></a></li>
+      <li><a href="https://www.youtube.com/user/HEIGVD"><img src={youtubeIconWhite} alt="youtube" /></a></li>
     </ul>
   </nav>
 );
@@ -126,7 +126,7 @@ const Footer = props => (
         <p>Une formation de la HEIG-VD</p>
       </article>
       <article className={styles.gridCol5}>
-        <a href="#"><img src={logoHesSo} alt="Hes-So"/></a>
+        <a href="https://www.hes-so.ch/"><img src={logoHesSo} alt="Hes-So"/></a>
       </article>
     </section>
   </section>
@@ -149,8 +149,8 @@ const NewsLetterSection = props => (
       <h1>nous suivre</h1>
       <p>Restez en contact avec nous sur nos canaux sociaux!</p>
       <div className={styles.socialIcons}>
-        <img src={facebookIcon} alt="facebook" />
-        <img src={youtubeIcon} alt="youtube" />
+        <a href="https://www.facebook.com/HEIGVD/?hc_ref=ARRmadl3u6MqvfXzecrRrcIniLz4iRqM83drRV6KVtJOaORMlDlPwG9o1DT2V3NDhhw"><img src={facebookIcon} alt="facebook" /></a>
+        <a href="https://www.youtube.com/user/HEIGVD"><img src={youtubeIcon} alt="youtube" /></a>
       </div>
     </article>
     <article className={styles.gridCol33}>
@@ -196,7 +196,7 @@ class SimpleMap extends React.Component {
 class ContactFormSection extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {names: '',email: '',phone:'', 'message':'',event:true, studentDiscuss:false, meetMarcoViviani:false};
+    this.state = {names: '',email: '',phone:'', 'message':'',event:true, studentDiscuss:false, meetMarcoViviani:false, formSuccess:false, formError:false};
 
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -223,10 +223,13 @@ class ContactFormSection extends React.Component {
         .then((responseJson) => {
             console.log(responseJson)
             console.log("Success")
+            this.setState({names: '',email: '',phone:'', 'message':'',event:true, studentDiscuss:false, meetMarcoViviani:false, formSuccess:true})
+
         })
         .catch((error) => {
           console.error(error);
           console.log("Error")
+          this.setState({formError:true})
         });; 
     }
     event.preventDefault();
@@ -239,7 +242,7 @@ class ContactFormSection extends React.Component {
           <section className={styles.gridRow}>
             <article className={styles.gridCol5}>
               <h1>Nous sommes là pour vous!</h1>
-              <p>Laissez-nous vos coordonnées nous nous ferons un plaisir de vous recontacter.</p>
+              <p>Laissez-nous vos coordonnées nous nous ferons un plaisir de vous recontacter.</p>
               <img className={styles.contactFormHeigLogo} src={logoHeigBlack} alt="Logo HEIG-VD" />
               <section className={styles.gridRow}>
                 <article className={styles.gridCol3}>
@@ -314,7 +317,19 @@ class ContactFormSection extends React.Component {
                     ... rencontrer Marco Viviani
                   </label>
                 </div>
+                <div style={{display:'flex',flexDirection:'row', justifyContent: 'flex-start', alignItems: 'flex-start', marginTop:'20px'}}>
                 <input type="submit" value="Envoyer" />
+                {
+                  this.state.formSuccess
+                    ? <p className={styles.thanksSubmit}>Merci, votre message a bien été envoyé</p>
+                    : null
+                }
+                {
+                  this.state.formError
+                    ? <p className={styles.thanksSubmit}>Le message n'a pas pu être envoyé</p>
+                    : null
+                }
+                </div>
               </form>
             </article>
           </section>
