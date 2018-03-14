@@ -276,6 +276,9 @@ h1{
 	.mobileHeaderContainer{
 		display: none;
 	}
+	.carousel{
+		display: block;
+	}
 }
 @media (max-width: 800px){
 	.heigLogo{
@@ -286,6 +289,9 @@ h1{
 	}
 	.carousel{
 		display: none;
+	}
+	.mobileHeaderContainer{
+		display: block;
 	}
 	.itemContainer p{
 		margin-top: 8px;
