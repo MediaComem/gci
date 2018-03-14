@@ -51,7 +51,7 @@ h1{
 	margin-top:20px;
 }
 .mobileHeaderContainer{
-	background: #42a155;
+	background: #f5c345;
 }
 .mobileHeaderContainer .gridRow{
 	justify-content: flex-start;
@@ -401,6 +401,9 @@ h1{
 	font-weight: bold;
 	margin-left:25px; 
 }
+.newsLetterContainer h1{
+	font-size: 1.2em;
+}
 .newsLetterContainer .socialIcons{
 	display: flex;
 }
@@ -408,6 +411,16 @@ h1{
 	height: 30px;
 	margin-right: 20px;
 }
+.newsLetterContainer .brochureBlock{
+	display: flex;
+	align-items: flex-start;
+}
+.newsLetterContainer .brochureBlock .downloadButton{
+	margin: 0 0 0 10px;
+	color:#8a959e;
+	border:1px #8a959e solid;
+}
+
 
 .footerContainer{
 	color:#fff;

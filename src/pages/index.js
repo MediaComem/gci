@@ -13,9 +13,10 @@ import facebookIconWhite from "../images/facebook-white.png";
 import youtubeIcon from "../images/youtube.png";
 import youtubeIconWhite from "../images/youtube-white.png";
 import goDown from "../images/go-down.png";
-import profilePic from "../images/profile.jpg";
+import profilePic from "../images/marcoViviani.jpg";
 import infoBackground from "../images/info-background.jpg";
 import mapMarker from "../images/map-marker.png";
+import brochure from "../images/brochure-bachelor-master.png";
 import skill1 from "../images/GCI-pictos-competences-01.png";
 import skill2 from "../images/GCI-pictos-competences-02.png";
 import skill3 from "../images/GCI-pictos-competences-03.png";
@@ -30,7 +31,7 @@ import skill11 from "../images/GCI-pictos-competences-11.png";
 import myfont from "../fonts/320DD7_0_0.woff2";
 import 'pure-react-carousel/dist/react-carousel.es.css';
 import GoogleMapReact from 'google-map-react';
-import ScrollableAnchor from 'react-scrollable-anchor'
+import ScrollableAnchor from 'react-scrollable-anchor';
 import YouTube from 'react-youtube';
 
 
@@ -49,8 +50,8 @@ export default class extends React.Component {
         >
           
           <Slider>
-            <Slide index={0} style={{backgroundColor:'#42a155'}}><div className={styles.sliderContainer}><div className={styles.sliderRow}><div className={styles.slidesImageContainer}><Image className={styles.slidesImageContainerImage} src={slide1} hasMasterSpinner={true}/></div></div></div></Slide>
             <Slide index={1} style={{backgroundColor:'#f5c345'}}><div className={styles.sliderContainer}><div className={styles.sliderRow}><div className={styles.slidesImageContainer}><Image className={styles.slidesImageContainerImage} src={slide2} hasMasterSpinner={true}/></div></div></div></Slide>
+            <Slide index={0} style={{backgroundColor:'#42a155'}}><div className={styles.sliderContainer}><div className={styles.sliderRow}><div className={styles.slidesImageContainer}><Image className={styles.slidesImageContainerImage} src={slide1} hasMasterSpinner={true}/></div></div></div></Slide>
             <Slide index={2} style={{backgroundColor:'#21abd2'}}><div className={styles.sliderContainer}><div className={styles.sliderRow}><div className={styles.slidesImageContainer}><Image className={styles.slidesImageContainerImage} src={slide3} hasMasterSpinner={true}/></div></div></div></Slide>
           </Slider>
           <div className={styles.slidesFixedContent}>
@@ -59,7 +60,7 @@ export default class extends React.Component {
                 <div className={styles.gridCol5}>
                   <h2>Orientation</h2>
                   <h2>construction &amp; infrastructures</h2>
-                  <p>Cette orientation de la filière Géomatique de la HEIG-VD vous permettras d’acquérir les connaissances et les compétences qui vous seront nécaissaires afin de travailler dans les domaines de la construction et de l’ingénierie civile.</p>
+                  <p>Cette orientation de la filière Géomatique de la HEIG-VD vous permettras d’acquérir les connaissances et les compétences qui vous seront nécessaires afin de travailler dans les domaines de la construction et de l’ingénierie civile.</p>
                   <a className={styles.downloadButton} href="#contact">Séance d’information</a>
                   <div>
                     <Dot slide={0} className={styles.sliderDot} />
@@ -110,7 +111,7 @@ const MobileHeader = props => (
       <h2>Orientation</h2>
       <h2>construction &amp; infrastructures</h2>
       <p>Cette orientation de la filière Géomatique de la HEIG-VD vous permettras d’acquérir les connaissances et les compétences qui vous seront nécaissaires afin de travailler dans les domaines de la construction et de l’ingénierie civile.</p>
-      <a className={styles.downloadButton} href="#">Séance d’information</a>
+      <a className={styles.downloadButton} href="#contact">Séance d’information</a>
       </section>
     </section>
   </section>
@@ -131,55 +132,37 @@ const Footer = props => (
   </section>
 );
 
-class NewsLetterSection extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {value: ''};
-
-    this.handleChange = this.handleChange.bind(this);
-    this.handleSubmit = this.handleSubmit.bind(this);
-  }
-
-  handleChange(event) {
-    this.setState({value: event.target.value});
-  }
-
-  handleSubmit(event) {
-    alert('A name was submitted: ' + this.state.value);
-    event.preventDefault();
-  }
-
-  render() {
-    return (
-        <section className={[styles.gridContainer,styles.newsLetterContainer].join(' ')}>
-        <section className={styles.gridRow}>
-          <article className={styles.gridCol33}>
-            <h1>Recherche & développement</h1>
-            <p>L’institut d’ingénierie du territoire (insit) de la HEIG-VD a pour objectif principal de renforcer sa position de centre de compétences en ingénierie territoriale et ce, dans sa relation avec le tissu économique local, national et international.</p>
-            <a className={styles.paletteDownloadButton} href="https://heig-vd.ch/rad/instituts/insit">En savoir plus</a>
-          </article>
-          <article className={styles.gridCol33}>
-            <h1>Un master pour la suite?</h1>
-            <p>Le Master of Science HES-SO en Ingénierie de territoire (MIT) vise la formation d’ingénieur-e-s capables d’œuvrer comme cadres supérieurs dans les entreprises privées et les administrations publiques actives dans les domaines de génie Civil, de la géomatique et de l’urbanisme opérationnel.</p>
-            <a className={styles.paletteDownloadButton} href="https://heig-vd.ch/formations/master/filieres/ingenierie-du-territoire">Renseignements</a>
-          </article>
-          <article className={styles.gridCol33}>
-            <h1>nous suivre</h1>
-            <p>Restez en contact avec nous sur nos canaux sociaux!</p>
-            <div className={styles.socialIcons}>
-              <img src={facebookIcon} alt="facebook" />
-              <img src={youtubeIcon} alt="youtube" />
-            </div>
-          </article>
-          <article className={styles.gridCol33}>
-            <h1>Lorem ipsum</h1>
-            <p>Lorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsum</p>
-          </article>
-        </section>
-        </section>
-    );
-  }
-}
+const NewsLetterSection = props => (
+  <section className={[styles.gridContainer,styles.newsLetterContainer].join(' ')}>
+  <section className={styles.gridRow}>
+    <article className={styles.gridCol33}>
+      <h1>Recherche & développement</h1>
+      <p>L’institut d’ingénierie du territoire (insit) de la HEIG-VD a pour objectif principal de renforcer sa position de centre de compétences en ingénierie territoriale et ce, dans sa relation avec le tissu économique local, national et international.</p>
+      <a className={styles.paletteDownloadButton} href="https://heig-vd.ch/rad/instituts/insit">En savoir plus</a>
+    </article>
+    <article className={styles.gridCol33}>
+      <h1>Un master pour la suite?</h1>
+      <p>Le Master of Science HES-SO en Ingénierie de territoire (MIT) vise la formation d’ingénieur-e-s capables d’œuvrer comme cadres supérieurs dans les entreprises privées et les administrations publiques actives dans les domaines de génie Civil, de la géomatique et de l’urbanisme opérationnel.</p>
+      <a className={styles.paletteDownloadButton} href="https://heig-vd.ch/formations/master/filieres/ingenierie-du-territoire">Renseignements</a>
+    </article>
+    <article className={styles.gridCol33}>
+      <h1>nous suivre</h1>
+      <p>Restez en contact avec nous sur nos canaux sociaux!</p>
+      <div className={styles.socialIcons}>
+        <img src={facebookIcon} alt="facebook" />
+        <img src={youtubeIcon} alt="youtube" />
+      </div>
+    </article>
+    <article className={styles.gridCol33}>
+      <h1>Plus d'informations</h1>
+      <div className={styles.brochureBlock}>
+      <img src={brochure} alt="Brocure HEIG-VD" />
+      <a className={styles.downloadButton} href="https://heig-vd.ch/docs/default-source/doc-centre-formation-de-base/brochure-bachelor-master-2018.pdf?sfvrsn=bf269fea_4">télécharger</a>
+      </div>
+    </article>
+  </section>
+  </section>
+)
 
 class SimpleMapMarker extends React.Component {
   render() {
@@ -231,22 +214,21 @@ class ContactFormSection extends React.Component {
 
   handleSubmit(event) {
     var value = this.state;
-    console.log(value)
-    // if(value != null){
-    //   fetch('https://hooks.zapier.com/hooks/catch/2986148/zv61t3/', {
-    //     method: 'POST',
-    //     body: JSON.stringify(value)
-    //   })
-    //     .then((response) => response.json())
-    //     .then((responseJson) => {
-    //         console.log(responseJson)
-    //         console.log("Success")
-    //     })
-    //     .catch((error) => {
-    //       console.error(error);
-    //       console.log("Error")
-    //     });; 
-    // }
+    if(value != null){
+      fetch('https://hooks.zapier.com/hooks/catch/2986148/zv61t3/', {
+        method: 'POST',
+        body: JSON.stringify(value)
+      })
+        .then((response) => response.json())
+        .then((responseJson) => {
+            console.log(responseJson)
+            console.log("Success")
+        })
+        .catch((error) => {
+          console.error(error);
+          console.log("Error")
+        });; 
+    }
     event.preventDefault();
   }
 
@@ -256,8 +238,8 @@ class ContactFormSection extends React.Component {
         <section className={[styles.gridContainer,styles.contactFormContainer].join(' ')}>
           <section className={styles.gridRow}>
             <article className={styles.gridCol5}>
-              <h1>nous sommes là pour vous!</h1>
-              <p>Si vous avez des interrogations concernant la formation ou l’école, n’hésitez pas à prendre contact avec nous via le formulaire ou par téléphone, nous nous ferons un plaisir de répondre à vos questions. </p>
+              <h1>Nous sommes là pour vous!</h1>
+              <p>Laissez-nous vos coordonnées nous nous ferons un plaisir de vous recontacter.</p>
               <img className={styles.contactFormHeigLogo} src={logoHeigBlack} alt="Logo HEIG-VD" />
               <section className={styles.gridRow}>
                 <article className={styles.gridCol3}>
@@ -386,15 +368,16 @@ const AdvantagesSection = props => (
             totalSlides={3}
           >
             <Slider>
-              <Slide index={0}><div className={styles.videoContainer}><YouTube videoId="Y_hN-sp5bz4" /></div></Slide>
-              <Slide index={1}><div className={styles.videoContainer}><YouTube videoId="AL7rPIuvLBY" /></div></Slide>
-              <Slide index={2}><div className={styles.videoContainer}><YouTube videoId="jcrkrAh1nOc" /></div></Slide>
+              <Slide index={0}><div className={styles.videoContainer}><YouTube videoId="O6QVNbL3rDE" /></div></Slide>
+              {/*<Slide index={1}><div className={styles.videoContainer}><YouTube videoId="AL7rPIuvLBY" /></div></Slide>
+              <Slide index={2}><div className={styles.videoContainer}><YouTube videoId="jcrkrAh1nOc" /></div></Slide>*/}
             </Slider>
+            {/*
             <div className={styles.advantagesSectionSliderDotsContainer}>
               <Dot slide={0} className={styles.advantagesSectionSliderDots} />
               <Dot slide={1} className={styles.advantagesSectionSliderDots} />
               <Dot slide={2} className={styles.advantagesSectionSliderDots} />
-            </div>
+            </div>*/}
           </CarouselProvider>
         </article>
       </section>
@@ -487,7 +470,7 @@ const PaletteSection = props => (
       </article>
       <article className={styles.gridCol4}>
         <div className={styles.itemContainer}>
-          <a className={styles.paletteDownloadButton} href="#">Le plan d’études</a>
+          <a className={styles.paletteDownloadButton} href="https://heig-vd.ch/formations/bachelor/filieres/geomatique/construction-et-infrastructures/plan-etude-gci-plein-temps">Le plan d’études</a>
         </div>
       </article>
     </section>
