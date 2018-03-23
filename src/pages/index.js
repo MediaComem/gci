@@ -38,6 +38,30 @@ import {Helmet} from "react-helmet";
 
 export default class extends React.Component {
 
+  // constructor(props) {
+  //   super(props);
+  //   this.state = {slide:0};
+  // }
+
+  // componentDidMount() {
+  //   this.timerID = setInterval(
+  //     () => this.moveSlide(),
+  //     2000
+  //   );
+  // }
+
+  // componentWillUnmount() {
+  //   clearInterval(this.timerID);
+  // }
+
+  // moveSlide() {
+  //   if(this.state.slide >1){
+  //     this.setState({slide:0})
+  //   }else{
+  //     this.setState({slide:this.state.slide+1})
+  //   }
+  // }
+
   render() {
     return (
       <div>
@@ -52,17 +76,18 @@ export default class extends React.Component {
           <meta property="og:site_name" content="Géomatique – Construction et infrastructures" />
           <meta property="og:description" content="Devenez acteur-trice majeur dans la création, l’entretien et le développement de l’espace construit et de ses infrastructures" />
           <meta property="og:url" content="https://gci.heig-vd.ch/" />
-          <meta property="og:igame" content={slide1} />
-          <meta property="og:igame" content={slide2} />
-          <meta property="og:igame" content={slide3} />
+          <meta property="og:image" content={slide1} />
+          <meta property="og:image" content={slide2} />
+          <meta property="og:image" content={slide3} />
         </Helmet>
-        <img className={styles.heigLogo} src={logoHeigAlone} alt="Logo HEIG-VD" />
+        <a href="https://www.heig-vd.ch"><img className={styles.heigLogo} src={logoHeigAlone} alt="Logo HEIG-VD" /></a>
         <CarouselProvider
           naturalSlideWidth={100}
           naturalSlideHeight={45}
           totalSlides={3}
           style={{position:"relative"}}
           className={styles.carousel}
+          // currentSlide={this.state.slide}
         >
           
           <Slider>
