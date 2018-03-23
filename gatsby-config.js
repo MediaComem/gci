@@ -12,5 +12,8 @@ module.exports = {
 	  {
 	  	resolve:`gatsby-plugin-react-helmet`
 	  }
-	]
+	],
+	siteMetadata: {
+    siteURL: 'https://gci.heig-vd.ch',
+  }
 }

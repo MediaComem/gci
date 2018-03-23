@@ -35,13 +35,23 @@ import ScrollableAnchor from 'react-scrollable-anchor';
 import YouTube from 'react-youtube';
 import {Helmet} from "react-helmet";
 
+export const query = graphql`
+  query SiteMetaQuery {
+    site {
+      siteMetadata {
+        siteURL
+      }
+    }
+  }
+`
+
 
 export default class extends React.Component {
 
-  // constructor(props) {
-  //   super(props);
-  //   this.state = {slide:0};
-  // }
+  constructor(props) {
+    super(props);
+    console.log(props)
+  }
 
   // componentDidMount() {
   //   this.timerID = setInterval(
@@ -75,10 +85,10 @@ export default class extends React.Component {
           <meta property="og:type" content="website" />
           <meta property="og:site_name" content="Géomatique – Construction et infrastructures" />
           <meta property="og:description" content="Devenez acteur-trice majeur dans la création, l’entretien et le développement de l’espace construit et de ses infrastructures" />
-          <meta property="og:url" content="https://gci.heig-vd.ch/" />
-          <meta property="og:image" content={slide1} />
-          <meta property="og:image" content={slide2} />
-          <meta property="og:image" content={slide3} />
+          <meta property="og:url" content={this.props.data.site.siteMetadata.siteURL} />
+          <meta property="og:image" content={this.props.data.site.siteMetadata.siteURL+slide1} />
+          <meta property="og:image" content={this.props.data.site.siteMetadata.siteURL+slide2} />
+          <meta property="og:image" content={this.props.data.site.siteMetadata.siteURL+slide3} />
         </Helmet>
         <a href="https://www.heig-vd.ch"><img className={styles.heigLogo} src={logoHeigAlone} alt="Logo HEIG-VD" /></a>
         <CarouselProvider
