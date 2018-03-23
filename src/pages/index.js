@@ -33,6 +33,7 @@ import 'pure-react-carousel/dist/react-carousel.es.css';
 import GoogleMapReact from 'google-map-react';
 import ScrollableAnchor from 'react-scrollable-anchor';
 import YouTube from 'react-youtube';
+import {Helmet} from "react-helmet";
 
 
 export default class extends React.Component {
@@ -40,6 +41,21 @@ export default class extends React.Component {
   render() {
     return (
       <div>
+        <Helmet>
+          <meta charSet="utf-8" />
+          <title>Bachelor en Géomatique, Orientation Construction et Infrastructures</title>
+          <meta name="description" content=" Construisez votre avenir et venez découvrir l’orientation construction et infrastructures de la filière géomatique."/>
+          <meta name="keywords" content="yverdon, yverdon-les-bains, heig-vd, bachelor, bachelor of science, 3 ans, cursus, hes-so, hes, formation, étudiant, étude, génie civil, ingénieur, ingénierie, plein-temps, temps partiel, construction, infrastructure, géomatique, orientation, ingénierie civil"/>
+          <meta name="author" content="HEIG-VD – Haute école d’ingénierie du canton de Vaud Yverdon-les-Bains"/>
+          <meta property="og:title" content="Orientation construction et infrastructures – Construisez votre avenir" />
+          <meta property="og:type" content="website" />
+          <meta property="og:site_name" content="Géomatique – Construction et infrastructures" />
+          <meta property="og:description" content="Devenez acteur-trice majeur dans la création, l’entretien et le développement de l’espace construit et de ses infrastructures" />
+          <meta property="og:url" content="https://gci.heig-vd.ch/" />
+          <meta property="og:igame" content={slide1} />
+          <meta property="og:igame" content={slide2} />
+          <meta property="og:igame" content={slide3} />
+        </Helmet>
         <img className={styles.heigLogo} src={logoHeigAlone} alt="Logo HEIG-VD" />
         <CarouselProvider
           naturalSlideWidth={100}
