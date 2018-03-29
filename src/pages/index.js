@@ -28,6 +28,7 @@ import skill8 from "../images/GCI-pictos-competences-08.png";
 import skill9 from "../images/GCI-pictos-competences-09.png";
 import skill10 from "../images/GCI-pictos-competences-10.png";
 import skill11 from "../images/GCI-pictos-competences-11.png";
+import facebookPreview from "../images/GCI-Post-FB-PAQUES-LINK.jpg";
 import favicon from "../images/GCI-Favicon.png";
 import myfont from "../fonts/320DD7_0_0.woff2";
 import 'pure-react-carousel/dist/react-carousel.es.css';
@@ -87,9 +88,7 @@ export default class extends React.Component {
           <meta property="og:site_name" content="Géomatique – Construction et infrastructures" />
           <meta property="og:description" content="Devenez acteur-trice majeur dans la création, l’entretien et le développement de l’espace construit et de ses infrastructures" />
           <meta property="og:url" content={this.props.data.site.siteMetadata.siteURL} />
-          <meta property="og:image" content={this.props.data.site.siteMetadata.siteURL+slide1} />
-          <meta property="og:image" content={this.props.data.site.siteMetadata.siteURL+slide2} />
-          <meta property="og:image" content={this.props.data.site.siteMetadata.siteURL+slide3} />
+          <meta property="og:image" content={this.props.data.site.siteMetadata.siteURL+facebookPreview} />
           <link rel="shortcut icon" type="image/png" href={this.props.data.site.siteMetadata.siteURL+favicon}/>
           <link rel="shortcut icon" type="image/png" href={this.props.data.site.siteMetadata.siteURL+favicon}/>
         </Helmet>
