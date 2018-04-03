@@ -92,6 +92,9 @@ export default class extends React.Component {
           <meta property="og:description" content="Devenez acteur-trice majeur dans la création, l’entretien et le développement de l’espace construit et de ses infrastructures" />
           <meta property="og:url" content={this.props.data.site.siteMetadata.siteURL} />
           <meta property="og:image" content={this.props.data.site.siteMetadata.siteURL+facebookPreview} />
+          <meta property="og:image" content={this.props.data.site.siteMetadata.siteURL+facebookPreview1} />
+          <meta property="og:image" content={this.props.data.site.siteMetadata.siteURL+facebookPreview2} />
+          <meta property="og:image" content={this.props.data.site.siteMetadata.siteURL+facebookPreview3} />
           <link rel="shortcut icon" type="image/png" href={this.props.data.site.siteMetadata.siteURL+favicon}/>
           <link rel="shortcut icon" type="image/png" href={this.props.data.site.siteMetadata.siteURL+favicon}/>
         </Helmet>
