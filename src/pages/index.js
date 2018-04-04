@@ -12,6 +12,8 @@ import facebookIcon from "../images/facebook.png";
 import facebookIconWhite from "../images/facebook-white.png";
 import youtubeIcon from "../images/youtube.png";
 import youtubeIconWhite from "../images/youtube-white.png";
+import linkedinIcon from "../images/linkedin.png";
+import instagramIcon from "../images/instagram.png";
 import goDown from "../images/go-down.png";
 import profilePic from "../images/marcoViviani.jpg";
 import infoBackground from "../images/info-background.jpg";
@@ -210,6 +212,8 @@ const NewsLetterSection = props => (
       <div className={styles.socialIcons}>
         <a href="https://www.facebook.com/HEIGVD/?hc_ref=ARRmadl3u6MqvfXzecrRrcIniLz4iRqM83drRV6KVtJOaORMlDlPwG9o1DT2V3NDhhw"><img src={facebookIcon} alt="facebook" /></a>
         <a href="https://www.youtube.com/user/HEIGVD"><img src={youtubeIcon} alt="youtube" /></a>
+        <a href="https://www.instagram.com/heigvd/"><img src={instagramIcon} alt="facebook" /></a>
+        <a href="https://www.linkedin.com/edu/school?id=154032"><img src={linkedinIcon} alt="youtube" /></a>
       </div>
     </article>
     <article className={styles.gridCol33}>
@@ -525,7 +529,7 @@ const PaletteSection = props => (
       <article className={styles.gridCol4}>
         <div className={styles.itemContainer}>
           <img src={skill9} />
-          <p>Transport, mobilité et constructions routières, maintenance et remise en état des voies de circulation </p>
+          <p>Transport, mobilité et constructions routières, maintenance et remise en état des voies de circulation</p>
         </div>
       </article>
     </section>
@@ -533,7 +537,7 @@ const PaletteSection = props => (
       <article className={styles.gridCol4}>
         <div className={styles.itemContainer}>
           <img src={skill10} />
-          <p>Transport, mobilité et constructions routières, maintenance et remise en état des voies de circulation </p>
+          <p>Energétique du bâtiment</p>
         </div>
       </article>
       <article className={styles.gridCol4}>
