@@ -558,7 +558,7 @@ const PaletteSection = props => (
       </article>
       <article className={styles.gridCol4}>
         <h2 className={styles.paletteDownloadTitle} >Plans d'études à télécharger</h2>
-        <a className={styles.paletteDownloadButton} href="https://heig-vd.ch/docs/default-source/doc-departement-ecg/gci-plan-etudes-plein-temps-(1).pdf?sfvrsn=a84f9fea_2"><MdFileDownload/> Plein temps</a>
+        <a className={styles.paletteDownloadButton} style={{marginRight:"4px"}} href="https://heig-vd.ch/docs/default-source/doc-departement-ecg/gci-plan-etudes-plein-temps-(1).pdf?sfvrsn=a84f9fea_2"><MdFileDownload/> Plein temps</a>
         <a className={styles.paletteDownloadButton} href="https://heig-vd.ch/docs/default-source/doc-departement-ecg/gci-plan-etudes-temps-partiel-emploi.pdf?sfvrsn=e64f9fea_0"><MdFileDownload/> en emploi / temps partiel</a>
       </article>
     </section>
