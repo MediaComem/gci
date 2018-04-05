@@ -1,6 +1,6 @@
 import React from 'react';
 import styles from "./index-css-modules.module.css";
-import { CarouselProvider, Slider, Slide, Dot, DotGroup, Image } from 'pure-react-carousel';
+import { CarouselProvider, Slider, Slide, Dot, DotGroup, Image, WithStore } from 'pure-react-carousel';
 import slide1 from "../images/GCI-images-hexagones_Vert.png";
 import slide2 from '../images/GCI-images-hexagones-Jaune.png'
 import slide3 from '../images/GCI-images-hexagones-Bleu.png'
@@ -60,25 +60,6 @@ export default class extends React.Component {
     console.log(props)
   }
 
-  // componentDidMount() {
-  //   this.timerID = setInterval(
-  //     () => this.moveSlide(),
-  //     2000
-  //   );
-  // }
-
-  // componentWillUnmount() {
-  //   clearInterval(this.timerID);
-  // }
-
-  // moveSlide() {
-  //   if(this.state.slide >1){
-  //     this.setState({slide:0})
-  //   }else{
-  //     this.setState({slide:this.state.slide+1})
-  //   }
-  // }
-
   render() {
     return (
       <div>
@@ -101,41 +82,11 @@ export default class extends React.Component {
           <link rel="shortcut icon" type="image/png" href={this.props.data.site.siteMetadata.siteURL+favicon}/>
         </Helmet>
         <a href="https://www.heig-vd.ch"><img className={styles.heigLogo} src={logoHeigAlone} alt="Logo HEIG-VD" /></a>
-        <CarouselProvider
-          naturalSlideWidth={100}
-          naturalSlideHeight={45}
-          totalSlides={3}
-          style={{position:"relative"}}
-          className={styles.carousel}
-          // currentSlide={this.state.slide}
-        >
-          
-          <Slider>
-            <Slide index={1} style={{backgroundColor:'#f5c345'}}><div className={styles.sliderContainer}><div className={styles.sliderRow}><div className={styles.slidesImageContainer}><Image className={styles.slidesImageContainerImage} src={slide2} hasMasterSpinner={true}/></div></div></div></Slide>
-            <Slide index={0} style={{backgroundColor:'#42a155'}}><div className={styles.sliderContainer}><div className={styles.sliderRow}><div className={styles.slidesImageContainer}><Image className={styles.slidesImageContainerImage} src={slide1} hasMasterSpinner={true}/></div></div></div></Slide>
-            <Slide index={2} style={{backgroundColor:'#21abd2'}}><div className={styles.sliderContainer}><div className={styles.sliderRow}><div className={styles.slidesImageContainer}><Image className={styles.slidesImageContainerImage} src={slide3} hasMasterSpinner={true}/></div></div></div></Slide>
-          </Slider>
-          <div className={styles.slidesFixedContent}>
-            <div className={styles.sliderContainer}>
-              <div className={styles.sliderRow}>
-                <div className={styles.gridCol5}>
-                  <h2>Orientation</h2>
-                  <h2>construction &amp; infrastructures</h2>
-                  <p>Cette orientation de la filière Géomatique de la HEIG-VD vous permettras d’acquérir les connaissances et les compétences qui vous seront nécessaires afin de travailler dans les domaines de la construction et de l’ingénierie civile.</p>
-                  <a className={styles.downloadButton} href="#contact">Séance d’information</a>
-                  <div>
-                    <Dot slide={0} className={styles.sliderDot} />
-                    <Dot slide={1} className={styles.sliderDot} />
-                    <Dot slide={2} className={styles.sliderDot} />
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <a href="#formation" className={styles.goDown}>
-            <img style={{height:'50px'}} src={goDown} alt="Logo HEIG-VD" />
-          </a>
-          
+        <CarouselProvider style={{position:"relative"}} className={styles.carousel}
+        naturalSlideWidth={100}
+        naturalSlideHeight={45}
+        totalSlides={3} >
+          <MyCarousel/>
         </CarouselProvider>
         <MobileHeader/>
         <AdvantagesSection anchor="formation"/>
@@ -151,6 +102,64 @@ export default class extends React.Component {
     );
   }
 }
+
+class MyCarouselComponent extends React.Component {
+
+  constructor(props) {
+    super(props);
+    this.state = {currentSlide:0}
+  }
+
+  componentDidMount(){
+    setInterval(this.changeSlide.bind(this), 3000);
+  }
+
+  changeSlide(){
+    this.setState(prevState => {
+      return {currentSlide: prevState.currentSlide > 1 ? 0 : prevState.currentSlide + 1}
+    });
+    this.props.carouselStore.setStoreState({ currentSlide: this.state.currentSlide });
+  }
+
+  render(){
+    return(
+      <span style={{position:"relative"}} className={styles.carousel} >
+      <Slider>
+        <Slide index={1} style={{backgroundColor:'#f5c345'}}><div className={styles.sliderContainer}><div className={styles.sliderRow}><div className={styles.slidesImageContainer}><Image className={styles.slidesImageContainerImage} src={slide2} hasMasterSpinner={true}/></div></div></div></Slide>
+        <Slide index={0} style={{backgroundColor:'#42a155'}}><div className={styles.sliderContainer}><div className={styles.sliderRow}><div className={styles.slidesImageContainer}><Image className={styles.slidesImageContainerImage} src={slide1} hasMasterSpinner={true}/></div></div></div></Slide>
+        <Slide index={2} style={{backgroundColor:'#21abd2'}}><div className={styles.sliderContainer}><div className={styles.sliderRow}><div className={styles.slidesImageContainer}><Image className={styles.slidesImageContainerImage} src={slide3} hasMasterSpinner={true}/></div></div></div></Slide>
+      </Slider>
+      <div className={styles.slidesFixedContent}>
+        <div className={styles.sliderContainer}>
+          <div className={styles.sliderRow}>
+            <div className={styles.gridCol5}>
+              <h2>Orientation</h2>
+              <h2>construction &amp; infrastructures</h2>
+              <p>Cette orientation de la filière Géomatique de la HEIG-VD vous permettras d’acquérir les connaissances et les compétences qui vous seront nécessaires afin de travailler dans les domaines de la construction et de l’ingénierie civile.</p>
+              <a className={styles.downloadButton} href="#contact">Séance d’information</a>
+              <div>
+                <Dot slide={0} className={styles.sliderDot} />
+                <Dot slide={1} className={styles.sliderDot} />
+                <Dot slide={2} className={styles.sliderDot} />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <a href="#formation" className={styles.goDown}>
+        <img style={{height:'50px'}} src={goDown} alt="Logo HEIG-VD" />
+      </a>
+      </span>
+    )
+  }
+};
+
+
+const MyCarousel = WithStore(MyCarouselComponent, state => ({
+  naturalSlideWidth:state.naturalSlideWidth,
+  naturalSlideHeight:state.naturalSlideHeight,
+  totalSlides:state.totalSlides
+}));
 
 const Nav = props => (
   <nav className={styles.mainNav}>
