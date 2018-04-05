@@ -269,7 +269,21 @@ h1{
 	align-self: flex-end;
 	font-size: 0.8em;
 	margin-top: 10px;
-	margin-bottom: 50px;
+	margin-bottom: 10px;
+	text-transform: uppercase;
+}
+.paletteDownloadButton{
+	margin-right: 4px;
+}
+@media (max-width: 1115px){
+.paletteDownloadButton {
+		display: inline-block;
+		margin-bottom:0; 
+	}
+}
+.paletteDownloadTitle{
+	margin-top: 0;
+	font-size: 1.1em;
 	text-transform: uppercase;
 }
 @media (min-width: 800px){
@@ -308,7 +322,7 @@ h1{
 	.paletteDownloadButton{
 		margin-top: 20px;
 	}
-	.informatonsContainer, .downloadButton{
+	.informatonsContainer, .downloadButton, .paletteDownloadButton {
 		display: inline-block;
 		margin-bottom:0; 
 	}

@@ -41,6 +41,7 @@ import GoogleMapReact from 'google-map-react';
 import ScrollableAnchor from 'react-scrollable-anchor';
 import YouTube from 'react-youtube';
 import {Helmet} from "react-helmet";
+import MdFileDownload from "react-icons/lib/md/file-download";
 
 export const query = graphql`
   query SiteMetaQuery {
@@ -135,8 +136,8 @@ class MyCarouselComponent extends React.Component {
             <div className={styles.gridCol5}>
               <h2>Orientation</h2>
               <h2>construction &amp; infrastructures</h2>
-              <p>Cette orientation de la filière Géomatique de la HEIG-VD vous permettras d’acquérir les connaissances et les compétences qui vous seront nécessaires afin de travailler dans les domaines de la construction et de l’ingénierie civile.</p>
-              <a className={styles.downloadButton} href="#contact">Séance d’information</a>
+              <p>Cette orientation de la filière Géomatique de la HEIG-VD vous permettra d’acquérir les connaissances et les compétences qui vous seront nécessaires afin de travailler dans les domaines de la construction et de l’ingénierie civile.</p>
+              <a className={styles.downloadButton} href="#contact">Séances d’information</a>
               <div>
                 <Dot slide={0} className={styles.sliderDot} />
                 <Dot slide={1} className={styles.sliderDot} />
@@ -181,7 +182,7 @@ const MobileHeader = props => (
       <h2>Orientation</h2>
       <h2>construction &amp; infrastructures</h2>
       <p>Cette orientation de la filière Géomatique de la HEIG-VD vous permettras d’acquérir les connaissances et les compétences qui vous seront nécaissaires afin de travailler dans les domaines de la construction et de l’ingénierie civile.</p>
-      <a className={styles.downloadButton} href="#contact">Séance d’information</a>
+      <a className={styles.downloadButton} href="#contact">Séances d’information</a>
       </section>
     </section>
   </section>
@@ -212,7 +213,7 @@ const NewsLetterSection = props => (
     </article>
     <article className={styles.gridCol33}>
       <h1>Un master pour la suite?</h1>
-      <p>Le Master of Science HES-SO en Ingénierie de territoire (MIT) vise la formation d’ingénieur-e-s capables d’œuvrer comme cadres supérieurs dans les entreprises privées et les administrations publiques actives dans les domaines de génie Civil, de la géomatique et de l’urbanisme opérationnel.</p>
+      <p>Le Master of Science HES-SO en Ingénierie de territoire (MIT) vise la formation d’ingénieur-e-s capables d’œuvrer comme cadres supérieurs dans les entreprises privées et les administrations publiques actives dans les domaines de génie civil, de la géomatique et de l’urbanisme opérationnel.</p>
       <a className={styles.paletteDownloadButton} href="https://heig-vd.ch/formations/master/filieres/ingenierie-du-territoire">Renseignements</a>
     </article>
     <article className={styles.gridCol33}>
@@ -418,7 +419,7 @@ const InformationsSection = props => (
         <article className={styles.gridCol5}>
           <h1>Construisez votre avenir</h1>
           <p>De nombreux défis, réservés à l'esprit inventif et créatif, que nos diplômé-e-s se feront le plaisir de relever.</p>
-          <p>Découvrez la variété du plan d’études (à télécharger ci-dessus) ainsi que les conditions d’admission, prenez connaissances des pré-requis et autres informations relatives à la formation.</p>
+          <p>Découvrez la variété du plan d’études (à télécharger ci-dessus) ainsi que les conditions d’admission, prenez connaissance des pré-requis et autres informations relatives à la formation.</p>
           <a className={styles.downloadButton} href="https://heig-vd.ch/formations/bachelor/admission/conditions-admission">Conditions d’admission</a>
           <a className={styles.downloadButton} href="https://heig-vd.ch/formations/bachelor/admission/inscriptions">Inscription</a>
         </article>
@@ -429,7 +430,7 @@ const InformationsSection = props => (
           <p>Haute école d’Ingénierie et de Gestion du Canton de Vaud, Yverdon-les-Bains</p>
           <h2>Durée</h2>
           <p>3 ans à plein temps ou 4 ans en emploi / à temps partiel</p>
-          <h2>Délais d’inscription</h2>
+          <h2>Délai d’inscription</h2>
           <p>31 mai 2018</p>
           <h2>Frais d'écolage</h2>
           <p>CHF 1’200.- / année</p>
@@ -512,7 +513,7 @@ const PaletteSection = props => (
       <article className={styles.gridCol4}>
         <div className={styles.itemContainer}>
           <img src={skill5} />
-          <p>Conception et développement de projets de construction</p>
+          <p>Gestion et direction des travaux, contrôle et surveillance</p>
         </div>
       </article>
       <article className={styles.gridCol4}>
@@ -552,13 +553,13 @@ const PaletteSection = props => (
       <article className={styles.gridCol4}>
         <div className={styles.itemContainer}>
           <img src={skill11} />
-          <p>Maintenance, remise en état, assainissement et rénovation des structures et des constructions</p>
+          <p>Impacts et interactions environnementales des constructions sur le territoire</p>
         </div>
       </article>
       <article className={styles.gridCol4}>
-        <div className={styles.itemContainer}>
-          <a className={styles.paletteDownloadButton} href="https://heig-vd.ch/formations/bachelor/filieres/geomatique/construction-et-infrastructures/plan-etude-gci-plein-temps">Le plan d’études</a>
-        </div>
+        <h2 className={styles.paletteDownloadTitle} >Plans d'études à télécharger</h2>
+        <a className={styles.paletteDownloadButton} href="https://heig-vd.ch/docs/default-source/doc-departement-ecg/gci-plan-etudes-plein-temps-(1).pdf?sfvrsn=a84f9fea_2"><MdFileDownload/> Plein temps</a>
+        <a className={styles.paletteDownloadButton} href="https://heig-vd.ch/docs/default-source/doc-departement-ecg/gci-plan-etudes-temps-partiel-emploi.pdf?sfvrsn=e64f9fea_0"><MdFileDownload/> en emploi / temps partiel</a>
       </article>
     </section>
   </section>
