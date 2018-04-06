@@ -272,7 +272,7 @@ h1{
 	margin-bottom: 10px;
 	text-transform: uppercase;
 }
-@media (max-width: 1160px){
+@media (max-width: 1180px){
 .paletteDownloadButton {
 		display: inline-block;
 		margin-bottom:0; 
