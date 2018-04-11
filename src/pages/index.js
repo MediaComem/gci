@@ -456,7 +456,7 @@ const AdvantagesSection = props => (
             totalSlides={3}
           >
             <Slider>
-              <Slide index={0}><div className={styles.videoContainer}><YouTube videoId="O6QVNbL3rDE" /></div></Slide>
+              <Slide index={0}><div className={styles.videoContainer}><YouTube videoId="ajzSVTzHtsU" /></div></Slide>
               {/*<Slide index={1}><div className={styles.videoContainer}><YouTube videoId="AL7rPIuvLBY" /></div></Slide>
               <Slide index={2}><div className={styles.videoContainer}><YouTube videoId="jcrkrAh1nOc" /></div></Slide>*/}
             </Slider>
