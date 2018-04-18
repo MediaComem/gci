@@ -138,8 +138,8 @@ class MyCarouselComponent extends React.Component {
               <h2>construction &amp; infrastructures</h2>
               <p>Cette orientation de la filière Géomatique de la HEIG-VD vous permettra d’acquérir les connaissances et les compétences qui vous seront nécessaires afin de travailler dans les domaines de la construction et de l’ingénierie civile.</p>
               <section className={styles.sliderContainerButtonsSection}>
-              <a className={styles.downloadButton} href="#contact">Séances d’information</a>
-              <a className={styles.downloadButton} href="https://heig-vd.ch/formations/bachelor/admission/inscriptions">Inscription</a>
+              <a className={styles.downloadButton} id="go-to-contact" href="#contact">Séances d’information</a>
+              <a className={styles.downloadButton} id="direct-to-subscription" href="https://heig-vd.ch/formations/bachelor/admission/inscriptions">Inscription</a>
               </section>
               <div>
                 <Dot slide={0} className={styles.sliderDot} />
