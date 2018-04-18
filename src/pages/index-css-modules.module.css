@@ -95,6 +95,9 @@ h1{
 	align-items: center;
 	flex-direction: column;
 }
+.sliderContainerButtonsSection{
+	display: flex;
+}
 .sliderRow{
 	display: flex;
 	padding-right: 30px;
