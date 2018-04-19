@@ -423,8 +423,8 @@ const InformationsSection = props => (
           <h1>Construisez votre avenir</h1>
           <p>De nombreux défis, réservés à l'esprit inventif et créatif, que nos diplômé-e-s se feront le plaisir de relever.</p>
           <p>Découvrez la variété du plan d’études (à télécharger ci-dessus) ainsi que les conditions d’admission, prenez connaissance des pré-requis et autres informations relatives à la formation.</p>
-          <a className={styles.downloadButton} href="https://heig-vd.ch/formations/bachelor/admission/conditions-admission">Conditions d’admission</a>
-          <a className={styles.downloadButton} href="https://heig-vd.ch/formations/bachelor/admission/inscriptions">Inscription</a>
+          <a className={styles.downloadButton} id="conversion-condition-admission-button" href="https://heig-vd.ch/formations/bachelor/admission/conditions-admission">Conditions d’admission</a>
+          <a className={styles.downloadButton} id="conversion-inscription-button" href="https://heig-vd.ch/formations/bachelor/admission/inscriptions">Inscription</a>
         </article>
         <article className={[styles.gridCol5,styles.informatonsContainerList].join(' ')}>
           <h2>Titre obtenu</h2>
